@@ -1,0 +1,45 @@
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Bundler
+.bundle/
+vendor/bundle
+vendor/cache
+vendor/assets
+vendor/ruby/
+
+# Logs and databases
+*.log
+*.sqlite3
+*.sql
+*.env
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Node modules (if you use Node.js)
+node_modules/
+
+# Temporary files
+tmp/
+temp/
+*.swp
+
+# Site output
+_site/
+
+# Gemfile
+Gemfile.lock
+
+# Ignore package.json
+package.json
+yarn.lock
