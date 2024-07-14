@@ -40,3 +40,9 @@ Follow these instructions to set up and run the project locally.
    ```sh
    git clone https://github.com/patrick204nqh/patrick204nqh.github.io.git
    cd patrick204nqh.github.io
+
+NOTE:
+```
+# Fix Permissions for Ruby Gems Directory
+sudo chown -R $USER:$(id -gn) /Users/patrick204nqh/.asdf/installs/ruby/2.7.5/lib/ruby/gems/2.7.0/
+```
