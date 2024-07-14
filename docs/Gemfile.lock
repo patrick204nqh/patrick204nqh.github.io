@@ -90,7 +90,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jekyll (~> 3.9.5)
+  jekyll (~> 3.7)
   jekyll-feed (~> 0.12)
   kramdown-parser-gfm (~> 1.1.0)
   minimal-mistakes-jekyll
