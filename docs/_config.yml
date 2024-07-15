@@ -22,9 +22,9 @@ locale                   : "en-US"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
 title                    : "PATRICK204NQH"
 title_separator          : "|"
-subtitle                 : "A blog about software development, data science, and other interesting topics."
+subtitle                 : "Insights on software development, data science, and more." # "A blog about software development, data science, and other interesting topics."
 name                     : "Huy Nguyen"
-description              : "A blog about software development, data science, and other interesting topics."
+description              : "Insights on software development, data science, and more."
 url                      : "https://patrick204nqh.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "patrick204nqh/patrick204nqh.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -329,3 +329,10 @@ defaults:
       comments: # true
       share: true
       related: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true

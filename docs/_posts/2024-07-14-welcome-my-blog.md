@@ -6,6 +6,7 @@ categories:
 tags:
   - introduction
   - welcome
+toc: true
 ---
 
 ## Welcome to My Blog!
