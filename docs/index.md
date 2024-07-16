@@ -1,11 +1,12 @@
 ---
-layout: splash
 title: "Home"
+layout: splash
 permalink: /
 header:
   og_image: "/assets/images/logo-88x88.png"
   overlay_color: "#5e616c"
   overlay_image: /assets/images/home.jpg
+  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
   actions:
     - label: "<i class='fas fa-download'></i> Download CV"
       url: "/profile"

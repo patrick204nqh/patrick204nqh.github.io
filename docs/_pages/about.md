@@ -1,8 +1,8 @@
 ---
-layout: single
-author_profile: false
 title: "About"
+layout: single
 permalink: /about/
+author_profile: false
 toc: true
 toc_label: "About"
 toc_icon: "info-circle"

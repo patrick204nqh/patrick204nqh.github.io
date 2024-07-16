@@ -1,8 +1,8 @@
 ---
-layout: single
-author_profile: false
 title: "Profile"
+layout: single
 permalink: /profile/
+author_profile: false
 toc: true
 toc_label: "Profile"
 toc_icon: "user-circle"
