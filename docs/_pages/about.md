@@ -4,6 +4,8 @@ author_profile: false
 title: "About"
 permalink: /about/
 toc: true
+toc_label: "About"
+toc_icon: "info-circle"
 ---
 
 <br/>
