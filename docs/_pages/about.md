@@ -7,11 +7,11 @@ permalink: /about/
 <br/>
 Welcome to my blog!
 <br/>
-I’m Huy Nguyen, a software developer passionate about building scalable web applications and continuously learning new technologies. With a strong foundation in backend development, I specialize in Ruby on Rails, Laravel, and other modern frameworks.
+*Insights on software development, data science, and more.*
 
 ### Background
 
-I started my journey in the tech world by studying Information Technology at university. Although I didn't complete my degree, I gained practical experience through an 8-month internship with Ruby on Rails. This hands-on experience paved the way for my professional career, where I now work as a Backend Developer for a Canadian product company. Over the years, I've worked on various projects, from developing HR platforms to creating personal websites and mobile applications.
+I started my journey in the tech world by studying Information Technology at university. Although I didn't complete my degree, I gained practical experience through an 8-month internship with Ruby on Rails. This hands-on experience paved the way for my professional career. I worked at an outsourcing company in Vietnam, contributing to various projects and gaining valuable industry experience. Currently, I work as a Backend Developer for a Canadian product company, developing and maintaining scalable web applications.
 
 ### Mission
 
