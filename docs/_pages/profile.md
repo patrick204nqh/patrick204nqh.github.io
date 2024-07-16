@@ -1,7 +1,9 @@
 ---
-layout: splash
+layout: single
+author_profile: false
 title: "Profile"
 permalink: /profile/
+toc: true
 ---
 
 ## Huy Nguyen
