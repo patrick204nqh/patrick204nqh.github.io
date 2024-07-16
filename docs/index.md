@@ -1,5 +1,6 @@
 ---
 layout: splash
+title: "Home"
 permalink: /
 hidden: true
 header:

@@ -1,7 +1,9 @@
 ---
-layout: splash
+layout: single
+author_profile: false
 title: "About"
 permalink: /about/
+toc: true
 ---
 
 <br/>
