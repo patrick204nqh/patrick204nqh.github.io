@@ -4,6 +4,8 @@ author_profile: false
 title: "Profile"
 permalink: /profile/
 toc: true
+toc_label: "Profile"
+toc_icon: "user-circle"
 ---
 
 ## Huy Nguyen
