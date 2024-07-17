@@ -37,9 +37,6 @@ temp/
 # Site output
 _site/
 
-# Gemfile
-Gemfile.lock
-
 # Ignore package.json
 package.json
 yarn.lock

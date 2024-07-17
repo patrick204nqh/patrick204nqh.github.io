@@ -1,11 +1,10 @@
 ---
 title: "Blog"
-layout: collection
+layout: archive
 permalink: /blog/
-author_profile: true
-classes: wide
-search: true
+collection: blog
 entries_layout: grid
+classes: wide
 ---
 
 <!-- TODO: add filter bar -->
@@ -19,11 +18,9 @@ entries_layout: grid
 {% endif %}
 
 {% assign entries_layout = page.entries_layout | default: 'grid' %}
-<div class="entries-{{ entries_layout }}" id="post-list">
+<div class="entries-{{ entries_layout }}">
   {% for post in posts %}
-    <div class="post-entry" data-category="{{ post.categories | join: ' ' }}" data-tags="{{ post.tags | join: ' ' }}" data-year="{{ post.date | date: '%Y' }}">
-      {% include archive-single.html type=entries_layout %}
-    </div>
+    {% include archive-single.html type=entries_layout %}
   {% endfor %}
 </div>
 
