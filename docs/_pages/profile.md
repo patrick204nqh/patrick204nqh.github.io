@@ -1,6 +1,5 @@
 ---
 title: "Profile"
-layout: single
 permalink: /profile/
 author_profile: false
 toc: true

@@ -6,11 +6,11 @@ gem "jekyll", "~> 3.7"
 group :jekyll_plugins do
   gem "github-pages"
   gem "jekyll-feed", "~> 0.12"
-  gem "jekyll-paginate"
   gem "jekyll-sitemap"
   gem "jekyll-gist"
   gem "jekyll-seo-tag"
   gem "jekyll-include-cache"
+  gem "jekyll-paginate-v2"
 end
 
 # Gems used only for github page's dependencies version
