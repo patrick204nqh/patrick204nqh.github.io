@@ -1,10 +1,11 @@
 ---
 title: "Blog"
-layout: archive
 permalink: /blog/
 collection: blog
 entries_layout: grid
 classes: wide
+pagination:
+  enabled: true
 ---
 
 <!-- TODO: add filter bar -->
