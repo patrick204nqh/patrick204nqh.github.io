@@ -1,16 +1,16 @@
 # Variables
 JEKYLL = bundle exec jekyll
 SOURCE = docs
-CONFIG = $(SOURCE)/_config.yml,$(SOURCE)/_config.dev.yml
+CONFIG = _config.yml,_config.dev.yml
 
 # Targets
 .PHONY: serve build clean
 
 serve:
-	$(JEKYLL) serve --config $(CONFIG) --source $(SOURCE)
+	cd $(SOURCE) && $(JEKYLL) serve --config $(CONFIG)
 
 build:
-	$(JEKYLL) build --config $(CONFIG) --source $(SOURCE)
+	cd $(SOURCE) && $(JEKYLL) build --config $(CONFIG)
 
 clean:
 	rm -rf $(SOURCE)/_site
