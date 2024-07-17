@@ -7,10 +7,10 @@ CONFIG = _config.yml,_config.dev.yml
 .PHONY: serve build clean
 
 serve:
-	cd $(SOURCE) && $(JEKYLL) serve --config $(CONFIG)
+	cd $(SOURCE) && $(JEKYLL) serve --profile --trace --config $(CONFIG)
 
 build:
-	cd $(SOURCE) && $(JEKYLL) build --config $(CONFIG)
+	cd $(SOURCE) && $(JEKYLL) build --profile --trace --config $(CONFIG)
 
 clean:
 	rm -rf $(SOURCE)/_site
