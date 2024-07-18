@@ -9,9 +9,9 @@ tags:
 toc: true
 ---
 
-## Welcome to My Blog!
-
 Hello, and welcome to my personal blog and portfolio! This is my first post, and I'm excited to share my journey with you.
+
+---
 
 ### About Me
 
