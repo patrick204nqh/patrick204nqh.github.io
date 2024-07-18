@@ -1,12 +1,26 @@
 ---
 title: "Analyzing Ruby Code Performance with a Custom Script"
 date: 2024-07-17
+header:
+  # image: /assets/images/logo-88x88.png
+  teaser: /assets/images/posts/2024-07-17.png
 categories:
   - blog
 tags:
   - ruby on rails
   - performance
 toc: true
+sidebar:
+  - title: "Reference Other Tools"
+    text: "While building your custom script, you can also draw inspiration from existing tools to enhance its functionality."
+    image: /assets/images/posts/2024-07-17.png
+    image_alt: "ruby performance"
+    links:
+      - title: "ruby-prof: A fast code profiler for Ruby"
+        url: https://github.com/ruby-prof/ruby-prof?tab=readme-ov-file
+      - title: "Datadog Continuous Profiler: A comprehensive tool for continuous profiling of Ruby applications"
+        url: https://www.datadoghq.com/blog/ruby-profiling-datadog-continuous-profiler/
+
 ---
 
 As a software developer, understanding and improving the performance of your code is crucial. In this post, I'll guide you through creating a performance analysis tool for Ruby code blocks, encapsulated within a class for easy use in the Rails console. This tool benchmarks code execution time and memory usage, displaying the results in a beautifully formatted CLI table.
@@ -145,15 +159,6 @@ x============================x=====================x
   Add more metrics or information to the table as needed.
 - **Custom Headers**:
   Modify the headers to suit your needs.
-
----
-
-### Reference Other Performance Analyzing Tools
-
-While building your custom script, you can also draw inspiration from existing tools to enhance its functionality:
-
-- [ruby-prof](https://github.com/ruby-prof/ruby-prof?tab=readme-ov-file): A fast code profiler for Ruby.
-- [Datadog Continuous Profiler](https://www.datadoghq.com/blog/ruby-profiling-datadog-continuous-profiler/): A comprehensive tool for continuous profiling of Ruby applications.
 
 ---
 
