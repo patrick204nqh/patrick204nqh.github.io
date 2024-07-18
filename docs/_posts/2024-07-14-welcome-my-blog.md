@@ -1,12 +1,22 @@
 ---
 title: "Welcome to My Blog"
 date: 2024-07-14
+header:
+  teaser: /assets/images/posts/2024-07-14-welcome-my-blog.png
 categories:
   - blog
 tags:
   - introduction
   - welcome
 toc: true
+sidebar:
+  - title: "About This Blog"
+    text: "Discover the purpose and mission of this blog, along with what you can expect from future posts."
+    image: /assets/images/posts/2024-07-14-welcome-my-blog.png
+    image_alt: "Welcome to My Blog"
+    links:
+      - title: "Read More About Me"
+        url: "/profile/"
 ---
 
 Hello, and welcome to my personal blog and portfolio! This is my first post, and I'm excited to share my journey with you.
