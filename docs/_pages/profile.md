@@ -74,7 +74,7 @@ I’m a software developer passionate about building scalable web applications a
 - **Technologies**: Ruby on Rails, Elixir, React, React Native
 <!-- - **Team Size**: 8 members (2 Backend VN, 1 Frontend VN, 1 Mobile VN, 1 Tester CA, 1 PM CA, 1 Full-stack CA, 1 Technical Leader CA) -->
 - **Contributions**:
-  <!-- - Migrated Elixir source to Ruby on Rails. -->
+  - Migrated Elixir source to Ruby on Rails.
   - Improved shift scheduling and QR code scanning functionalities.
   - Developed internal chat features using WebSocket.
   - Created order and invoice features for organization and agency interactions.

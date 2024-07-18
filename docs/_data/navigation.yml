@@ -1,9 +1,9 @@
 main:
   - title: "Home"
     url: "/"
-  - title: "Profile"
-    url: "/profile/"
   - title: "Blog"
     url: "/blog/"
+  - title: "Profile"
+    url: "/profile/"
   - title: "About"
     url: "/about/"
