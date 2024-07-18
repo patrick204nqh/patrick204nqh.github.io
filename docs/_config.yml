@@ -113,11 +113,17 @@ social:
     - "https://x.com/patrick204nqh"
 
 # Analytics
+# The Google Analytics script has been moved to the head section for better performance.
+# You can find it in the _includes/head/custom.html file.
 analytics:
-  provider               : "google-gtag" # false (default), "google", "google-universal", "google-gtag", "custom"
+  provider               : # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
     tracking_id          : "G-MTET3M58GX"
     anonymize_ip         : # true, false (default)
+  umami:
+    website_id           : "9f339a8c-9cf5-477c-9314-97be8ac7682f"
+    auto_track           : # true, false (default)
+    debug                : # true, false (default)
 
 
 # Site Author
