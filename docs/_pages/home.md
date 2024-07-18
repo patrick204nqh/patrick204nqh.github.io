@@ -5,10 +5,10 @@ permalink: /
 header:
   og_image: /assets/images/logo-88x88.png
   overlay_color: "#5e616c"
-  overlay_image: /assets/images/home.jpg
-  caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
+  overlay_image: /assets/images/home.png
+  caption: "PATRICK204NQH"
   actions:
-    - label: "<i class='fas fa-download'></i> Download CV"
+    - label: "<i class='fas fa-download'></i> Explore My Work"
       url: /profile
 excerpt: >
   A blog about software development, data science, and other interesting topics.
@@ -20,6 +20,7 @@ feature_row:
     url: "/blog"
     btn_class: "btn--primary"
     btn_label: "Read more"
+    btn_description: "Read more about my latest blog articles"
   - image_path: /assets/images/sections/profile.png
     alt: "Profile"
     title: "Profile"
@@ -27,6 +28,7 @@ feature_row:
     url: "/profile"
     btn_class: "btn--primary"
     btn_label: "View Profile"
+    btn_description: "View my professional profile"
   - image_path: /assets/images/sections/contact.png
     alt: "Contact"
     title: "Contact"
@@ -34,6 +36,7 @@ feature_row:
     url: "/contact"
     btn_class: "btn--primary"
     btn_label: "Contact Me"
+    btn_description: "Contact me for any inquiries or collaborations"
   # - image_path: /assets/images/testimonials.jpg
   #   alt: "Testimonials"
   #   title: "Testimonials"
@@ -53,9 +56,42 @@ feature_row:
 # Welcome to My Blog and Portfolio
 This is a space where I share my knowledge and experiences in software development, data science, and other interesting topics. Explore my latest blog posts, learn more about my professional background, and get in touch with me for any inquiries or collaborations.
 
-{% include feature_row %}
+{% include feature_row.html %}
 
 <style>
+
+/* Hero overlay */
+.page__hero-overlay {
+  position: relative;
+  margin-bottom: 2em;
+  padding: 3em 0;
+  clear: both;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: intro 0.3s both;
+  animation-delay: 0.25s;
+}
+
+.page__hero-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1;
+}
+
+.page__hero-overlay .wrapper {
+  position: relative;
+  text-align: center;
+  color: white;
+  z-index: 2; /* Ensures the text is above the overlay */
+}
+
+/* Feature row */
 .feature__wrapper {
   display: flex;
   justify-content: space-between;
