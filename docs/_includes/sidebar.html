@@ -1,0 +1,90 @@
+{% if page.author_profile or layout.author_profile or page.sidebar %}
+  <div class="sidebar sticky">
+    <!-- Author Profile Section -->
+    {% if page.author_profile or layout.author_profile %}
+      {% include author-profile.html %}
+    {% endif %}
+
+    <!-- Custom Sidebar Sections -->
+    {% if page.sidebar %}
+      {% for s in page.sidebar %}
+        <!-- Image Section -->
+        {% if s.image %}
+          <img src="{{ s.image | relative_url }}" alt="{% if s.image_alt %}{{ s.image_alt }}{% endif %}">
+        {% endif %}
+
+        <!-- Title Section -->
+        {% if s.title %}<h3>{{ s.title }}</h3>{% endif %}
+
+        <!-- Text Section -->        
+        {% if s.text %}{{ s.text | markdownify }}{% endif %}
+
+        <!-- Navigation Links -->
+        {% if s.nav %}{% include nav_list nav=s.nav %}{% endif %}
+
+        <!-- This custom include renders a list of links for the sidebar.
+        It is used to handle the 'links' field in the post's front matter,
+        allowing for custom sidebar content specific to each post. -->
+        {% if s.links %}
+          <ul class="sidebar-link">
+            {% for link in s.links %}
+              <li>
+                <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endfor %}
+      {% if page.sidebar.nav %}
+        {% include nav_list nav=page.sidebar.nav %}
+      {% endif %}
+    {% endif %}
+  </div>
+{% endif %}
+
+<style>
+.sidebar {
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+.sidebar-section {
+  margin-bottom: 20px;
+}
+.sidebar-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.sidebar-title {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.sidebar-text {
+  font-size: 0.95em;
+  margin-bottom: 15px;
+  color: #555555;
+}
+.sidebar-links {
+  list-style-type: none;
+  padding: 0;
+}
+.sidebar-links li {
+  margin-bottom: 10px;
+}
+.sidebar-link {
+  text-decoration: none;
+  color: #333333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.sidebar-link:hover {
+  color: #0073e6;
+  text-decoration: underline;
+}
+</style>

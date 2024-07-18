@@ -1,7 +1,6 @@
 ---
 title: "Blog"
 permalink: /blog/
-collection: blog
 entries_layout: grid
 classes: wide
 pagination:
