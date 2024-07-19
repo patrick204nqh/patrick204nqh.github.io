@@ -2,7 +2,7 @@
 title: "Welcome to My Blog"
 date: 2024-07-14
 header:
-  teaser: /assets/images/posts/2024-07-14-welcome-my-blog.png
+  teaser: /assets/images/posts/2024-07-14-welcome-to-my-blog.webp
 categories:
   - Personal
 tags:
@@ -11,7 +11,7 @@ tags:
 sidebar:
   - title: "About This Blog"
     text: "Discover the purpose and mission of this blog, along with what you can expect from future posts."
-    image: /assets/images/posts/2024-07-14-welcome-my-blog.png
+    image: /assets/images/posts/2024-07-14-welcome-to-my-blog.webp
     image_alt: "Welcome to My Blog"
     links:
       - title: "Read More About Me"

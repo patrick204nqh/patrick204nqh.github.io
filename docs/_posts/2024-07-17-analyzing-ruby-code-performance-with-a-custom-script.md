@@ -3,7 +3,7 @@ title: "Analyzing Ruby code performance with a custom script"
 date: 2024-07-17
 header:
   # image: /assets/images/logo-88x88.png
-  teaser: /assets/images/posts/2024-07-17-analyzing-ruby-code-performance-with-a-custom-script.png
+  teaser: /assets/images/posts/2024-07-17-analyzing-ruby-code-performance-with-a-custom-script.webp
 categories:
   - Tech
 tags:
@@ -12,7 +12,7 @@ tags:
 sidebar:
   - title: "Reference other tools"
     text: "While building your custom script, you can also draw inspiration from existing tools to enhance its functionality."
-    image: /assets/images/posts/2024-07-17-analyzing-ruby-code-performance-with-a-custom-script.png
+    image: /assets/images/posts/2024-07-17-analyzing-ruby-code-performance-with-a-custom-script.webp
     image_alt: "ruby performance"
     links:
       - title: "ruby-prof: A fast code profiler for Ruby"
