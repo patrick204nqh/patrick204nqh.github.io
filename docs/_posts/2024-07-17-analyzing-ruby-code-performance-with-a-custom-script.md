@@ -1,5 +1,5 @@
 ---
-title: "Analyzing Ruby Code Performance with a Custom Script"
+title: "Analyzing Ruby code performance with a custom script"
 date: 2024-07-17
 header:
   # image: /assets/images/logo-88x88.png
@@ -11,7 +11,7 @@ tags:
   - performance
 toc: true
 sidebar:
-  - title: "Reference Other Tools"
+  - title: "Reference other tools"
     text: "While building your custom script, you can also draw inspiration from existing tools to enhance its functionality."
     image: /assets/images/posts/2024-07-17-analyzing-ruby-code-performance-with-a-custom-script.png
     image_alt: "ruby performance"
@@ -27,12 +27,12 @@ As a software developer, understanding and improving the performance of your cod
 
 ---
 
-### Why Use a Custom Performance Analysis Script?
+### Why use a custom performance analysis script?
 
-1. **Feature Development and Optimization**:
+1. **Feature development and optimization**:
    - When developing a new feature or optimizing old code, it’s essential to understand how these changes affect the performance of your functions.
    
-2. **Better Formatting and Clarity**:
+2. **Better formatting and clarity**:
    - The default output from benchmarking tools like `Benchmark` can be quite plain and sometimes unclear. Often, you may need to format this data manually to explain it to others or to interpret it correctly. A custom script can present important metrics in a clear, formatted table, making it easier to parse and share with reviewers quickly.
 
 ---
@@ -47,7 +47,7 @@ gem install benchmark terminal-table get_process_mem
 
 ---
 
-### Creating the Performance Analyzer Class
+### Creating the Performance Analyzer class
 
 Save the following script as `lib/scripts/performance_analyzer.rb`:
 
@@ -99,10 +99,10 @@ end
 
 ### Usage in Rails Console
 
-1. **Load the Script**:
+1. **Load the script**:
    Ensure your Rails console can load the script. You might need to adjust the load path or use `require_relative` if the script is not in the default load path.
 
-2. **Use the Class**:
+2. **Use the class**:
    You can use the `PerformanceAnalyzer` class directly in the Rails console. Here’s how:
 
 ```ruby
@@ -128,7 +128,7 @@ end
 
 ---
 
-### Sample Output
+### Sample output
 
 ```
 x============================x=====================x
@@ -153,16 +153,16 @@ x============================x=====================x
 
 ### Customization
 
-- **Different Blocks**:
+- **Different blocks**:
   Pass any block of code to the `analyze` method with a description to measure its performance.
 - **Additional Metrics**:
   Add more metrics or information to the table as needed.
-- **Custom Headers**:
+- **Custom headers**:
   Modify the headers to suit your needs.
 
 ---
 
-### Final Thoughts
+### Final thoughts
 
 Using a performance analyzer like this can help you identify bottlenecks in your Ruby code, ensuring that your applications run efficiently. Customize and expand upon this basic structure to fit your specific needs, and always strive for optimized and well-performing code.
 
