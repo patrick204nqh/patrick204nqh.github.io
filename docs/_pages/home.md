@@ -8,7 +8,7 @@ header:
   overlay_image: /assets/images/home.webp
   caption: "PATRICK204NQH"
   actions:
-    - label: "<i class='fas fa-download'></i> Explore My Work"
+    - label: "<i class='fas fa-folder-open'></i> Explore My Work"
       url: /profile
 excerpt: >
   A blog about software development, data science, and other interesting topics.
@@ -19,7 +19,7 @@ feature_row:
     excerpt: "Explore my latest articles on software development, data science, and more."
     url: "/blog"
     btn_class: "btn--primary"
-    btn_label: "Read blog"
+    btn_label: "Read Blog"
     btn_description: "Read more about my latest blog articles"
   - image_path: /assets/images/sections/profile.webp
     alt: "Profile"
