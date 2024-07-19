@@ -19,7 +19,7 @@ feature_row:
     excerpt: "Explore my latest articles on software development, data science, and more."
     url: "/blog"
     btn_class: "btn--primary"
-    btn_label: "Read more"
+    btn_label: "Read blog"
     btn_description: "Read more about my latest blog articles"
   - image_path: /assets/images/sections/profile.png
     alt: "Profile"
@@ -61,7 +61,7 @@ This is a space where I share my knowledge and experiences in software developme
 <style>
 
 /* Hero overlay */
-.page__hero-overlay {
+.page__hero--overlay {
   position: relative;
   margin-bottom: 2em;
   padding: 3em 0;
@@ -73,21 +73,26 @@ This is a space where I share my knowledge and experiences in software developme
   animation-delay: 0.25s;
 }
 
-.page__hero-overlay::before {
+.page__hero--overlay::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  background-color: rgba(0, 0, 0, 0.3); /* Darker overlay */
   z-index: 1;
 }
 
-.page__hero-overlay .wrapper {
+.page__hero--overlay .wrapper {
   position: relative;
-  text-align: center;
   color: white;
+  z-index: 2; /* Ensures the text is above the overlay */
+}
+
+.page__hero--overlay h1,
+.page__hero--overlay p {
+  position: relative;
   z-index: 2; /* Ensures the text is above the overlay */
 }
 
