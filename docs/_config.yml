@@ -129,7 +129,7 @@ analytics:
 # Site Author
 author:
   name             : "Huy Nguyen"
-  avatar           : "/assets/images/author.png"
+  avatar           : "/assets/images/author.webp"
   bio              : "I'm a software developer passionate about building scalable web applications and continuously learning new technologies."
   location         : "Sai Gon, VN"
   email            : "patrick204nqh@outlook.com"
