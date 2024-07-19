@@ -8,7 +8,6 @@ categories:
 tags:
   - introduction
   - welcome
-toc: true
 sidebar:
   - title: "About This Blog"
     text: "Discover the purpose and mission of this blog, along with what you can expect from future posts."

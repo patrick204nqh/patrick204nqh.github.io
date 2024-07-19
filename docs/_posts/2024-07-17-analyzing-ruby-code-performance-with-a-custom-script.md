@@ -9,7 +9,6 @@ categories:
 tags:
   - ruby on rails
   - performance
-toc: true
 sidebar:
   - title: "Reference other tools"
     text: "While building your custom script, you can also draw inspiration from existing tools to enhance its functionality."
