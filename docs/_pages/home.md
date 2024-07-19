@@ -5,7 +5,7 @@ permalink: /
 header:
   og_image: /assets/images/logo-88x88.png
   overlay_color: "#5e616c"
-  overlay_image: /assets/images/home.png
+  overlay_image: /assets/images/home.webp
   caption: "PATRICK204NQH"
   actions:
     - label: "<i class='fas fa-download'></i> Explore My Work"
@@ -13,7 +13,7 @@ header:
 excerpt: >
   A blog about software development, data science, and other interesting topics.
 feature_row:
-  - image_path: /assets/images/sections/blog.png
+  - image_path: /assets/images/sections/blog.webp
     alt: "Blog"
     title: "Blog"
     excerpt: "Explore my latest articles on software development, data science, and more."
@@ -21,7 +21,7 @@ feature_row:
     btn_class: "btn--primary"
     btn_label: "Read blog"
     btn_description: "Read more about my latest blog articles"
-  - image_path: /assets/images/sections/profile.png
+  - image_path: /assets/images/sections/profile.webp
     alt: "Profile"
     title: "Profile"
     excerpt: "Learn more about my professional background and skills."
@@ -29,7 +29,7 @@ feature_row:
     btn_class: "btn--primary"
     btn_label: "View Profile"
     btn_description: "View my professional profile"
-  - image_path: /assets/images/sections/contact.png
+  - image_path: /assets/images/sections/contact.webp
     alt: "Contact"
     title: "Contact"
     excerpt: "Get in touch with me for any inquiries or collaborations."
