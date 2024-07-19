@@ -96,6 +96,97 @@ This is a space where I share my knowledge and experiences in software developme
   z-index: 2; /* Ensures the text is above the overlay */
 }
 
+/* Hero overlay */
+.page__hero--overlay {
+  position: relative;
+  margin-bottom: 2em;
+  padding: 3em 0;
+  clear: both;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: intro 0.3s both;
+  animation-delay: 0.25s;
+}
+
+.page__hero--overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Darker overlay */
+  z-index: 1;
+}
+
+.page__hero--overlay .wrapper {
+  position: relative;
+  color: white;
+  z-index: 2; /* Ensures the text is above the overlay */
+}
+
+.page__hero--overlay h1,
+.page__hero--overlay p {
+  position: relative;
+  z-index: 2; /* Ensures the text is above the overlay */
+}
+
+/* Button styling */
+.page__hero--overlay .btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  padding: 0.25rem 0.5rem; /* Smaller padding */
+  font-size: 1rem; /* Smaller font size */
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.page__hero--overlay .btn:hover, 
+.page__hero--overlay .btn:focus {
+  text-decoration: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+}
+
+.page__hero--overlay .btn:active {
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+}
+
+/* Light outline button styling */
+.page__hero--overlay .btn--light-outline {
+  color: inherit;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid currentColor;
+}
+
+.page__hero--overlay .btn--light-outline:hover, 
+.page__hero--overlay .btn--light-outline:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.page__hero--overlay .btn--light-outline:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Large button styling */
+.page__hero--overlay .btn--large {
+  padding: 0.5rem 1rem; /* Smaller padding */
+  font-size: 1.25rem; /* Smaller font size */
+  border-radius: 0.25rem;
+}
+
+.page__hero--overlay .btn i {
+  margin-right: 0.3rem; /* Adjusted margin */
+}
+
 /* Feature row */
 .feature__wrapper {
   display: flex;

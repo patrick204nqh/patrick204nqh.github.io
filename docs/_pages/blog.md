@@ -25,3 +25,14 @@ pagination:
 </div>
 
 {% include paginator.html %}
+
+<style>
+.entries-grid .archive__item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.entries-grid .archive__item a:hover {
+  text-decoration: underline;
+}
+</style>
