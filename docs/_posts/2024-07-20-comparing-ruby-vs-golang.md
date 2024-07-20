@@ -4,8 +4,8 @@ date: 2024-07-20
 header:
   teaser: /assets/images/posts/2024-07-20-comparing-ruby-vs-golang.webp
 categories:
-  - Tech
-  - Programming Language
+  - tech
+  - programming-language
 tags:
   - comparison
   - ruby
