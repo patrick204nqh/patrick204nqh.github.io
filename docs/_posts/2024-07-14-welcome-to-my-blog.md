@@ -4,7 +4,7 @@ date: 2024-07-14
 header:
   teaser: /assets/images/posts/2024-07-14-welcome-to-my-blog.webp
 categories:
-  - Personal
+  - personal
 tags:
   - introduction
   - welcome

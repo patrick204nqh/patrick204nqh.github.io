@@ -5,8 +5,8 @@ header:
   # image: /assets/images/logo-88x88.png
   teaser: /assets/images/posts/2024-07-17-analyzing-ruby-code-performance-with-a-custom-script.webp
 categories:
-  - Tech
-  - Ruby
+  - tech
+  - ruby
 tags:
   - ruby on rails
   - performance
