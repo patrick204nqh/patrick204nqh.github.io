@@ -6,6 +6,7 @@ header:
   teaser: /assets/images/posts/2024-07-17-analyzing-ruby-code-performance-with-a-custom-script.webp
 categories:
   - Tech
+  - Ruby
 tags:
   - ruby on rails
   - performance

@@ -1,5 +1,12 @@
 # My Personal Blog and Portfolio
 
+![GitHub release](https://img.shields.io/github/v/release/patrick204nqh/patrick204nqh.github.io)
+![GitHub tag](https://img.shields.io/github/v/tag/patrick204nqh/patrick204nqh.github.io?label=latest%20tag)
+![GitHub issues](https://img.shields.io/github/issues/patrick204nqh/patrick204nqh.github.io)
+![GitHub forks](https://img.shields.io/github/forks/patrick204nqh/patrick204nqh.github.io)
+![GitHub stars](https://img.shields.io/github/stars/patrick204nqh/patrick204nqh.github.io)
+![GitHub license](https://img.shields.io/github/license/patrick204nqh/patrick204nqh.github.io)
+
 Welcome to my personal blog and portfolio! This site is built using the [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes) Jekyll theme and hosted on GitHub Pages.
 
 ## Table of Contents
