@@ -70,7 +70,7 @@ reCaptcha:
   secret                 :
 atom_feed:
   path                   : # blank (default) uses feed.xml
-  hide                   : # true, false (default)
+  hide                   : true # true, false (default)
 search                   : true # true, false (default)
 search_full_content      : # true, false (default)
 search_provider          : # lunr (default), algolia, google
@@ -137,18 +137,15 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/patrick204nqh"
+    - label: "Linkedin"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/patrick204nqh"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/patrick204nqh"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       url: "https://facebook.com/patrick204nqh"
-    # - label: "Twitter"
-    #   icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
-    # - label: "Website"
-    #   icon: "fas fa-fw fa-link"
-    #   url: "https://patrick204nqh.github.io"
 
 # Site Footer
 footer:
@@ -162,15 +159,15 @@ footer:
     # - label: "Bitbucket"
     #   icon: "fab fa-fw fa-bitbucket"
       # url:
+    - label: "Linkedin"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/patrick204nqh"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/patrick204nqh"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       url: "https://facebook.com/patrick204nqh"
-    # - label: "Twitter"
-    #   icon: "fab fa-fw fa-twitter-square"
-      # url:
 
 
 # Reading Files
