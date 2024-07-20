@@ -53,7 +53,7 @@ feature_row:
   #   btn_label: "View more"
 ---
 
-# Welcome to My Blog and Portfolio
+## Welcome to My Blog and Portfolio
 This is a space where I share my knowledge and experiences in software development, data science, and other interesting topics. Explore my latest blog posts, learn more about my professional background, and get in touch with me for any inquiries or collaborations.
 
 {% include feature_row.html %}
