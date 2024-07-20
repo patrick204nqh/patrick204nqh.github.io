@@ -1,11 +1,19 @@
 # My Personal Blog and Portfolio
 
-![GitHub release](https://img.shields.io/github/v/release/patrick204nqh/patrick204nqh.github.io)
-![GitHub tag](https://img.shields.io/github/v/tag/patrick204nqh/patrick204nqh.github.io?label=latest%20tag)
-![GitHub issues](https://img.shields.io/github/issues/patrick204nqh/patrick204nqh.github.io)
+![Build Status](https://github.com/patrick204nqh/patrick204nqh.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)
+![Latest Release](https://img.shields.io/github/v/release/patrick204nqh/patrick204nqh.github.io?label=latest%20release)
+![Issues](https://img.shields.io/github/issues/patrick204nqh/patrick204nqh.github.io)
+![License](https://img.shields.io/github/license/patrick204nqh/patrick204nqh.github.io)
+![Last Commit](https://img.shields.io/github/last-commit/patrick204nqh/patrick204nqh.github.io)
+![Commit Activity](https://img.shields.io/github/commit-activity/m/patrick204nqh/patrick204nqh.github.io)
+
+<!---
+![Latest Tag](https://img.shields.io/github/v/tag/patrick204nqh/patrick204nqh.github.io?label=latest%20tag)
+![Contributors](https://img.shields.io/github/contributors/patrick204nqh/patrick204nqh.github.io)
 ![GitHub forks](https://img.shields.io/github/forks/patrick204nqh/patrick204nqh.github.io)
 ![GitHub stars](https://img.shields.io/github/stars/patrick204nqh/patrick204nqh.github.io)
-![GitHub license](https://img.shields.io/github/license/patrick204nqh/patrick204nqh.github.io)
+![Watchers](https://img.shields.io/github/watchers/patrick204nqh/patrick204nqh.github.io)
+-->
 
 Welcome to my personal blog and portfolio! This site is built using the [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes) Jekyll theme and hosted on GitHub Pages.
 
