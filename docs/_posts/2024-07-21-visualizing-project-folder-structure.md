@@ -111,6 +111,44 @@ chmod +x list_structure.sh
 ./list_structure.sh
 ```
 
+## Example Result
+
+Here's an example of what the directory structure might look like after running the script:
+
+```
+.
+├── app
+│   ├── assets
+│   │   ├── images
+│   │   ├── javascripts
+│   │   └── stylesheets
+│   ├── controllers
+│   ├── helpers
+│   ├── models
+│   └── views
+├── config
+│   ├── environments
+│   ├── initializers
+│   └── locales
+├── db
+│   ├── migrate
+│   └── seeds
+├── lib
+│   ├── assets
+│   └── tasks
+├── log
+├── public
+├── test
+│   ├── controllers
+│   ├── fixtures
+│   ├── helpers
+│   ├── integration
+│   ├── mailers
+│   ├── models
+│   └── system
+└── vendor
+```
+
 ## Conclusion
 
 Using `fd` and `tree` with these steps or script, it is easy to visualize a project’s folder structure while excluding specific files and directories. This approach provides a cleaner and more focused view of the project's layout, making it easier to write documentation and for other developers to quickly get up to speed with the project.
