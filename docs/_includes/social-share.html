@@ -1,0 +1,94 @@
+<section class="page__share">
+  {% assign share_on_label = site.data.ui-text[site.locale].share_on_label | default: "Share on" %}
+  {% if share_on_label %}
+    <h4 class="page__share-title">{{ share_on_label }}</h4>
+  {% endif %}
+
+  <div class="share-buttons">
+    <!-- GitHub Share -->
+    <a href="https://github.com/new?source={{ page.url | absolute_url | url_encode }}&title={{ page.title | url_encode }}"
+       class="btn btn--github"
+       onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+       title="{{ share_on_label }} GitHub">
+      <i class="fab fa-fw fa-github" aria-hidden="true"></i>
+      <span> GitHub</span>
+    </a>
+
+    <!-- DEV Community Share -->
+    <a href="https://dev.to/new?content={{ page.url | absolute_url | url_encode }}&title={{ page.title | url_encode }}"
+       class="btn btn--dev"
+       onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+       title="{{ share_on_label }} DEV Community">
+      <i class="fab fa-fw fa-dev" aria-hidden="true"></i>
+      <span> DEV</span>
+    </a>
+
+    <!-- LinkedIn Share -->
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}"
+       class="btn btn--linkedin"
+       onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+       title="{{ share_on_label }} LinkedIn">
+      <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>
+      <span> LinkedIn</span>
+    </a>
+
+    <!-- X (formerly Twitter) Share -->
+    <a href="https://twitter.com/intent/tweet?{% if site.twitter.username %}via={{ site.twitter.username | url_encode }}&{% endif %}text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}"
+       class="btn btn--x"
+       onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+       title="{{ share_on_label }} X">
+      <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i>
+      <span> Twitter</span>
+    </a>
+
+    <!-- Reddit Share -->
+    <a href="https://reddit.com/submit?url={{ page.url | absolute_url | url_encode }}&title={{ page.title | url_encode }}"
+       class="btn btn--reddit"
+       onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+       title="{{ share_on_label }} Reddit">
+      <i class="fab fa-fw fa-reddit" aria-hidden="true"></i>
+      <span> Reddit</span>
+    </a>
+  </div>
+</section>
+
+<style>
+.page__share .share-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 5px; */
+}
+
+.page__share .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  margin: 5px;
+  text-decoration: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.page__share .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.page__share .btn--github { background: #333; }
+.page__share .btn--dev { background: #0A0A0A; }
+.page__share .btn--linkedin { background: #0077B5; }
+.page__share .btn--x { background: #1DA1F2; }
+.page__share .btn--reddit { background: #FF4500; }
+
+.page__share .btn i {
+  margin-right: 8px;
+}
+
+.page__share .btn span {
+  font-size: 0.9em; /* Slightly smaller font size for the text */
+}
+</style>

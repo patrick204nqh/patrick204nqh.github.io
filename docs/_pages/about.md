@@ -20,13 +20,8 @@ I started my journey in the tech world by studying Information Technology at uni
 
 The mission of this blog is to share insights and knowledge on software development, data science, and career development. I aim to provide valuable content that helps fellow developers and tech enthusiasts learn new skills, stay updated with industry trends, and grow in their careers. Whether it's through tutorials, best practices, or project showcases, I hope to contribute to the tech community and inspire others to achieve their goals.
 
-### Social Media
+{% include content/social-media.md %}
 
-Feel free to reach out to me on social media:
-
-- [GitHub](https://github.com/patrick204nqh)
-- [Instagram](https://www.instagram.com/patrick204nqh)
-
-You can also connect with me on [LinkedIn](https://www.linkedin.com/in/patrick204nqh).
+---
 
 Thank you for visiting my blog. I hope you find the content helpful and engaging!
