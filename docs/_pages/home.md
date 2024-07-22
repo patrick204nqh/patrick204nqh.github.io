@@ -3,7 +3,7 @@ title: "Home"
 layout: splash
 permalink: /
 header:
-  og_image: /assets/images/logo-88x88.png
+  og_image: /assets/images/logo.svg
   overlay_color: "#5e616c"
   overlay_image: /assets/images/home.webp
   caption: "PATRICK204NQH"
