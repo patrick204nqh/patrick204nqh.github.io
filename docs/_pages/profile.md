@@ -87,13 +87,8 @@ I’m a software developer passionate about building scalable web applications a
 ### Education
 - **University**: Studied IT at Saigon University but dropped out in the second year
 
-### Social Media
+{% include content/social-media.md %}
 
-Feel free to reach out to me on social media:
-
-- [GitHub](https://github.com/patrick204nqh)
-- [Instagram](https://www.instagram.com/patrick204nqh)
-
-You can also connect with me on [LinkedIn](https://www.linkedin.com/in/patrick204nqh).
+---
 
 Thank you for visiting my blog. I hope you find the content helpful and engaging!

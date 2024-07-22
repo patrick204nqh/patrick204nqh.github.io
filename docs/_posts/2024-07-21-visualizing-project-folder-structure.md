@@ -7,9 +7,8 @@ categories:
   - tech
   - documentation
 tags:
-  - fd
-  - tree
-  - visualization
+  - bash
+  - tips
 sidebar:
   - title: "Useful Tools"
     text: "Using tools like fd and tree can simplify the process of visualizing your project structure and aid in documentation."

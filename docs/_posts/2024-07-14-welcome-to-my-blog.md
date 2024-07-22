@@ -38,7 +38,6 @@ In this blog, I'll be sharing:
 Feel free to connect with me on social media:
 - [GitHub](https://github.com/patrick204nqh)
 - [LinkedIn](https://www.linkedin.com/in/patrick204nqh)
-- [Twitter](https://twitter.com/patrick204nqh)
 
 Thank you for visiting my blog. Stay tuned for more updates!
 
