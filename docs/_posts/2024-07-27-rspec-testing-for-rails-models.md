@@ -1,6 +1,6 @@
 ---
 title: "RSpec Testing for Rails Models"
-date: 2024-07-21
+date: 2024-07-27
 header:
   teaser: /assets/images/posts/2024-07-27-rspec-testing-for-rails-models.webp
 categories:
