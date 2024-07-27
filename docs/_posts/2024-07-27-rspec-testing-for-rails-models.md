@@ -328,3 +328,9 @@ A few best practices for writing effective tests:
 By following these guidelines and examples, it is possible to effectively test Rails models using RSpec. This approach ensures that the application behaves as expected and helps maintain a high level of code quality.
 
 I hope you find these insights beneficial and can apply them to your own work. Happy coding!
+
+---
+
+### Let's Connect
+
+Feel free to leave a comment below. I’d love to hear your thoughts and experiences with RSpec and Rails model testing.
