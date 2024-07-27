@@ -7,10 +7,11 @@ toc_label: "About"
 toc_icon: "info-circle"
 ---
 
-<br/>
-Welcome to my blog!
-<br/>
+### Welcome to My Blog!
+
 *Insights on software development, data science, and more.*
+
+---
 
 ### Background
 
