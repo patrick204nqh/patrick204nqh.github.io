@@ -82,42 +82,11 @@ This is a space where I share my knowledge and experiences in software developme
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3); /* Darker overlay */
   z-index: 1;
+  transition: background-color 0.3s ease; /* Smooth transition */
 }
 
-.page__hero--overlay .wrapper {
-  position: relative;
-  color: white;
-  z-index: 2; /* Ensures the text is above the overlay */
-}
-
-.page__hero--overlay h1,
-.page__hero--overlay p {
-  position: relative;
-  z-index: 2; /* Ensures the text is above the overlay */
-}
-
-/* Hero overlay */
-.page__hero--overlay {
-  position: relative;
-  margin-bottom: 2em;
-  padding: 3em 0;
-  clear: both;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  animation: intro 0.3s both;
-  animation-delay: 0.25s;
-}
-
-.page__hero--overlay::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3); /* Darker overlay */
-  z-index: 1;
+.page__hero--overlay:hover::before {
+  background-color: rgba(0, 0, 0, 0.5); /* Darker overlay on hover */
 }
 
 .page__hero--overlay .wrapper {
