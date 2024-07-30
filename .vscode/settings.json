@@ -1,0 +1,24 @@
+{
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "*.md": "markdown",
+    "*.html": "html",
+    "*.yml": "yaml",
+    "*.js": "javascript"
+  },
+  "prettier.requireConfig": true,
+  "prettier.trailingComma": "es5",
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+  "prettier.singleQuote": true,
+  "prettier.semi": true,
+  "prettier.printWidth": 80,
+  "yaml.format.enable": true,
+  "yaml.format.singleQuote": true,
+  "yaml.format.bracketSpacing": true,
+  "yaml.format.proseWrap": "preserve",
+  "markdownlint.config": {
+    "default": true,
+    "MD013": false
+  }
+}

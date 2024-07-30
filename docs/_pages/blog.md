@@ -9,7 +9,8 @@ pagination:
 
 <!-- TODO: add filter bar -->
 
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+{% assign subtitle = site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" %}
+<h3 class="archive__subtitle">{{ subtitle }}</h3>
 
 {% if paginator %}
   {% assign posts = paginator.posts %}
