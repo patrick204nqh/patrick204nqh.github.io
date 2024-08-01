@@ -17,28 +17,28 @@ sidebar:
     text: "Explore different methods of code analysis to maintain and improve code quality in software projects."
     links:
       - title: "Manual Code Reviews"
-        url: "https://www.atlassian.com/software/git/articles/manual-code-review"
+        url: "https://dev.to/documatic/code-reviewing-a-ruby-on-rails-application-plm"
         description: "A manual process where developers review each other's code for errors and adherence to coding standards."
       - title: "Linters"
-        url: "https://eslint.org/docs/latest/user-guide/getting-started"
+        url: "https://rubocop.org/"
         description: "Tools that automatically check code for stylistic and programming errors."
       - title: "Automated Testing Suites"
-        url: "https://rubyonrails.org/testing"
+        url: "https://guides.rubyonrails.org/testing.html"
         description: "Frameworks that run predefined tests to ensure code behaves as expected."
       - title: "Static Code Analysis"
-        url: "https://en.wikipedia.org/wiki/Static_program_analysis"
+        url: "https://www.fastruby.io/static-code-analysis"
         description: "Analysis performed on code without executing it, used to find vulnerabilities and improve quality."
       - title: "Dynamic Code Analysis"
-        url: "https://en.wikipedia.org/wiki/Dynamic_program_analysis"
+        url: "https://dev.to/clouddefenseai/what-is-dynamic-code-analysis-10p4"
         description: "Analysis performed on a running program to identify bugs and performance issues."
       - title: "Code Metrics"
-        url: "https://en.wikipedia.org/wiki/Software_metric"
+        url: "https://codeclimate.com/blog/deciphering-ruby-code-metrics"
         description: "Quantitative measures of code attributes, such as complexity and maintainability."
     image: /assets/images/posts/2024-08-01-customize-static-code-analysis-for-ruby-on-rails.webp
     image_alt: "Static code analysis"
 ---
 
-As software projects grow and evolve, maintaining code quality and consistency becomes increasingly challenging. Code analysis is essential for identifying potential issues, ensuring adherence to best practices, and facilitating smooth upgrades to newer versions of frameworks and libraries. Common methods for code analysis include [manual code reviews](https://www.atlassian.com/software/git/articles/manual-code-review), [linters](https://eslint.org/docs/latest/user-guide/getting-started), and [automated testing suites](https://rubyonrails.org/testing).
+As software projects grow and evolve, maintaining code quality and consistency becomes increasingly challenging. Code analysis is essential for identifying potential issues, ensuring adherence to best practices, and facilitating smooth upgrades to newer versions of frameworks and libraries. Common methods for code analysis include [manual code reviews](https://dev.to/documatic/code-reviewing-a-ruby-on-rails-application-plm), [linters](https://rubocop.org/), and [automated testing suites](https://guides.rubyonrails.org/testing.html).
 
 In this post, I introduce a solution for static code analysis tailored to Ruby on Rails projects. This approach uses customizable detectors to automate the detection of specific syntax patterns that may need attention. As an example, consider the transition from Rails 5.2 to 6.1. While `where.not` with multiple attributes remains supported, updating these patterns across a large codebase can be time-consuming and error-prone. For more details on this change, you can refer to [Rails pull request #36029](https://github.com/rails/rails/pull/36029).
 
