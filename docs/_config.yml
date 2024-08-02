@@ -102,14 +102,19 @@ og_image                 : "/assets/images/logo.svg" # Open Graph/Twitter defaul
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
+  type                   : Person
+  name                   : PATRICK204NQH
   links: # An array of links to social media profiles
-    - "https://www.facebook.com/patrick204nqh"
-    - "https://instagram.com/patrick204nqh"
+    - "https://github.com/patrick204nqh"
     - "https://www.linkedin.com/in/patrick204nqh"
+    - "https://patrick204nqh.medium.com"
+    - "https://patrick204nqh.substack.com"
+    - "https://dev.to/patrick204nqh"
+    - "https://instagram.com/patrick204nqh"
+    - "https://www.facebook.com/patrick204nqh"
     - "https://www.youtube.com/@patrick204nqh"
     - "https://www.pinterest.com/patrick204nqh"
+    - "https://twitter.com/patrick204nqh"
     - "https://x.com/patrick204nqh"
 
 # Analytics
@@ -328,7 +333,7 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: single
+      layout: post
       author_profile: false
       read_time: true
       toc: true
