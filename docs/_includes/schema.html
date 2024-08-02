@@ -1,0 +1,45 @@
+{% comment %}
+Structured Data Schema based on the page type
+{% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "{{ page_type }}",
+  "name": "{{ page.title | default: site.title }}",
+  "url": "{{ page.url | absolute_url }}",
+  {% case page_type %}
+    {% when "WebPage" %}
+      "description": "{{ site.description | escape }}",
+      "image": "{{ site_og_image | jsonify }}"
+    {% when "Blog" %}
+      "description": "{{ site.description | escape }}",
+      "image": "{{ site_og_image | jsonify }}"
+    {% when "ProfilePage" %}
+      "description": "Profile of {{ site.author.name }}",
+      "image": "{{ site.author.image | absolute_url }}",
+      "sameAs": "{{ site.social.links | jsonify }}"
+    {% when "AboutPage" %}
+      "description": "{{ site.description | escape }}",
+      "image": "{{ site_og_image | jsonify }}"
+    {% when "BlogPosting" %}
+      "articleBody": "{{ page.content | strip_html | strip_newlines | escape }}",
+      "datePublished": "{{ page.date | date_to_iso_string }}",
+      "dateModified": "{{ page.last_modified_at | date_to_iso_string }}",
+      "author": {
+        "@type": "Person",
+        "name": "{{ site.author.name }}",
+        "url": "{{ '/profile' | absolute_url | jsonify }}"",
+        "email": "{{ site.author.email }}",
+        "address": "{{ site.author.location }}",
+        "image": "{{ site.author.avatar | absolute_url }}"{% if site.social.links %},
+        "sameAs": "{{ site.social.links | jsonify }}"{% endif %}
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ site.title }}",
+        "logo": "{{ site_og_image | jsonify }}"{% if site.social.links %},
+        "sameAs": "{{ site.social.links | jsonify }}"{% endif %}
+      }
+  {% endcase %}
+}
+</script>
