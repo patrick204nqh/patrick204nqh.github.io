@@ -1,8 +1,8 @@
 ---
 title: "Customizable Static Code Analysis for Ruby on Rails"
-date: 2024-08-01
+date: 2024-08-02
 header:
-  teaser: /assets/images/posts/2024-08-01-customize-static-code-analysis-for-ruby-on-rails.webp
+  teaser: /assets/images/posts/2024-08-02-customize-static-code-analysis-for-ruby-on-rails.webp
 categories:
   - tech
   - ruby
@@ -34,7 +34,7 @@ sidebar:
       - title: "Code Metrics"
         url: "https://codeclimate.com/blog/deciphering-ruby-code-metrics"
         description: "Quantitative measures of code attributes, such as complexity and maintainability."
-    image: /assets/images/posts/2024-08-01-customize-static-code-analysis-for-ruby-on-rails.webp
+    image: /assets/images/posts/2024-08-02-customize-static-code-analysis-for-ruby-on-rails.webp
     image_alt: "Static code analysis"
 ---
 
