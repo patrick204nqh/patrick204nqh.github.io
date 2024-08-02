@@ -16,8 +16,12 @@ Structured Data Schema based on the page type
       "image": "{{ site_og_image | jsonify }}"
     {% when "ProfilePage" %}
       "description": "Profile of {{ site.author.name }}",
-      "image": "{{ site.author.image | absolute_url }}",
-      "sameAs": "{{ site.social.links | jsonify }}"
+      "image": "{{ site.author.avatar | absolute_url }}",
+      "sameAs": [
+        {% for link in site.social.links %}
+          "{{ link }}"{% if forloop.last == false %},{% endif %}
+        {% endfor %}
+      ]
     {% when "AboutPage" %}
       "description": "{{ site.description | escape }}",
       "image": "{{ site_og_image | jsonify }}"
@@ -28,17 +32,25 @@ Structured Data Schema based on the page type
       "author": {
         "@type": "Person",
         "name": "{{ site.author.name }}",
-        "url": "{{ '/profile' | absolute_url | jsonify }}"",
+        "url": "{{ '/profile' | absolute_url | jsonify }}",
         "email": "{{ site.author.email }}",
         "address": "{{ site.author.location }}",
-        "image": "{{ site.author.avatar | absolute_url }}"{% if site.social.links %},
-        "sameAs": "{{ site.social.links | jsonify }}"{% endif %}
+        "image": "{{ site.author.avatar | absolute_url }}",
+        "sameAs": [
+          {% for link in site.social.links %}
+            "{{ link }}"{% if forloop.last == false %},{% endif %}
+          {% endfor %}
+        ]
       },
       "publisher": {
         "@type": "Organization",
         "name": "{{ site.title }}",
-        "logo": "{{ site_og_image | jsonify }}"{% if site.social.links %},
-        "sameAs": "{{ site.social.links | jsonify }}"{% endif %}
+        "logo": "{{ site_og_image | jsonify }}",
+        "sameAs": [
+          {% for link in site.social.links %}
+            "{{ link }}"{% if forloop.last == false %},{% endif %}
+          {% endfor %}
+        ]
       }
   {% endcase %}
 }
