@@ -7,21 +7,38 @@ Structured Data Schema based on the page type
   "@type": "{{ page_type }}",
   "name": "{{ page.title | default: site.title }}",
   "url": "{{ page.url | absolute_url }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.title }}",
+    "logo": {{ site_og_image | jsonify }},
+    "sameAs": [
+      {% for link in site.social.links %}
+        "{{ link }}"{% if forloop.last == false %},{% endif %}
+      {% endfor %}
+    ]
+  },
   {% case page_type %}
     {% when "WebPage" %}
       "description": "{{ site.description | escape }}",
-      "image": "{{ site_og_image | jsonify }}"
+      "image": {{ site_og_image | jsonify }}
     {% when "Blog" %}
       "description": "{{ site.description | escape }}",
-      "image": "{{ site_og_image | jsonify }}"
+      "image": {{ site_og_image | jsonify }}
     {% when "ProfilePage" %}
-      "description": "Profile of {{ site.author.name }}",
-      "image": "{{ site.author.avatar | absolute_url }}",
-      "sameAs": [
-        {% for link in site.social.links %}
-          "{{ link }}"{% if forloop.last == false %},{% endif %}
-        {% endfor %}
-      ]
+      "mainEntity": {
+        "@type": "Person",
+        "name": "{{ site.author.name }}",
+        "url": {{ page.url | absolute_url | jsonify }},
+        "email": "{{ site.author.email }}",
+        "address": "{{ site.author.location }}",
+        "image": "{{ site.author.avatar | absolute_url }}",
+        "sameAs": [
+          {% for link in site.social.links %}
+            "{{ link }}"{% if forloop.last == false %},{% endif %}
+          {% endfor %}
+        ]
+      },
+      "description": "Visit the profile page of {{ site.author.name }} to learn more about his professional and personal background."
     {% when "AboutPage" %}
       "description": "{{ site.description | escape }}",
       "image": "{{ site_og_image | jsonify }}"
@@ -36,16 +53,6 @@ Structured Data Schema based on the page type
         "email": "{{ site.author.email }}",
         "address": "{{ site.author.location }}",
         "image": "{{ site.author.avatar | absolute_url }}",
-        "sameAs": [
-          {% for link in site.social.links %}
-            "{{ link }}"{% if forloop.last == false %},{% endif %}
-          {% endfor %}
-        ]
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "{{ site.title }}",
-        "logo": "{{ site_og_image | jsonify }}",
         "sameAs": [
           {% for link in site.social.links %}
             "{{ link }}"{% if forloop.last == false %},{% endif %}
