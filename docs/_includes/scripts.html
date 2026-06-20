@@ -2,12 +2,12 @@
 (function () {
   /* ---- Timezone colors (fixed +07) ---- */
   var palettes = [
-    { name: 'night',     h: [5,7],   skyT: '#0c0f25', skyB: '#161b33', sea: '#020414', sun: 'transparent', sunCls: false },
-    { name: 'dawn',      h: [7,9],   skyT: '#1a1a3e', skyB: '#d4735e', sea: '#0c2340', sun: '#fbbf24',     sunCls: true  },
-    { name: 'morning',   h: [9,12],  skyT: '#1a3055', skyB: '#5ba3e6', sea: '#0a7ab5', sun: '#fde047',     sunCls: true  },
-    { name: 'midday',    h: [12,15], skyT: '#0270b0', skyB: '#7dc4fc', sea: '#025a8a', sun: '#fef08a',     sunCls: true  },
-    { name: 'afternoon', h: [15,18], skyT: '#0a4068', skyB: '#d4850a', sea: '#0c2a4a', sun: '#fbbf24',     sunCls: true  },
-    { name: 'sunset',    h: [18,20], skyT: '#1a1535', skyB: '#cc3333', sea: '#0a0f2a', sun: '#f97316',     sunCls: true  }
+    { name: 'night',     h: [5,7],   skyT: '#0c0f25', skyB: '#161b33', sea: '#020414' },
+    { name: 'dawn',      h: [7,9],   skyT: '#1a1a3e', skyB: '#d4735e', sea: '#0c2340' },
+    { name: 'morning',   h: [9,12],  skyT: '#1a3055', skyB: '#5ba3e6', sea: '#0a7ab5' },
+    { name: 'midday',    h: [12,15], skyT: '#0270b0', skyB: '#7dc4fc', sea: '#025a8a' },
+    { name: 'afternoon', h: [15,18], skyT: '#0a4068', skyB: '#d4850a', sea: '#0c2a4a' },
+    { name: 'sunset',    h: [18,20], skyT: '#1a1535', skyB: '#cc3333', sea: '#0a0f2a' }
   ];
 
   function getPalette() {
@@ -25,13 +25,6 @@
     root.style.setProperty('--sky-top', p.skyT);
     root.style.setProperty('--sky-bottom', p.skyB);
     root.style.setProperty('--sea-color', p.sea);
-    root.style.setProperty('--sun-color', p.sun);
-    
-    var sun = document.getElementById('hero-sun');
-    if (sun) {
-      if (p.sunCls) sun.classList.add('visible');
-      else sun.classList.remove('visible');
-    }
   }
 
   applyPalette(getPalette());
