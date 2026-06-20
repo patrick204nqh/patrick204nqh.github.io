@@ -1,7 +1,6 @@
-# ponytail: stripped from 350 lines → 24. Removed: skin, analytics providers, comments, pagination,
-# search, social sharing, breadcrumbs, category/tag archives, sass, html compression.
-# jekyll-github-metadata fetches live repo data at build time. Tag a repo with "oss" on GitHub
-# and it appears in the OSS section automatically.
+# ponytail: stripped from 350 lines → 24. Projects page uses client-side GitHub API
+# fetch — no build-time tokens needed. Tag a repo with "oss" on GitHub and it appears
+# in the OSS section automatically.
 
 title: "PATRICK204NQH"
 name: "Huy Nguyen"
