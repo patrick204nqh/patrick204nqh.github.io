@@ -26,7 +26,7 @@
     root.style.setProperty('--sky-bottom', p.skyB);
     root.style.setProperty('--sea-color', p.sea);
     root.style.setProperty('--sun-color', p.sun);
-    root.style.setProperty('--cache-sea', p.sea);
+    
     var sun = document.getElementById('hero-sun');
     if (sun) {
       if (p.sunCls) sun.classList.add('visible');
@@ -73,118 +73,7 @@
   }, { passive: true });
   updateNav();
 
-  /* ---- Ocean canvas animation ---- */
-  (function () {
-    var canvas = document.getElementById('ocean-canvas');
-    if (!canvas) return;
-    var ctx = canvas.getContext('2d');
-    var W, H, seaLevel;
-    var seaColor = getComputedStyle(document.documentElement).getPropertyValue('--sea-color').trim() || '#020414';
-    var animId;
-
-    function resize() {
-      var rect = canvas.parentElement.getBoundingClientRect();
-      W = canvas.width = rect.width;
-      H = canvas.height = rect.height;
-      seaLevel = H * 0.58;
-    }
-    resize();
-    window.addEventListener('resize', resize);
-
-    var waves = [
-      { amp: 28, freq: 0.006, speed: 0.012, phase: 0 },
-      { amp: 18, freq: 0.01,  speed: 0.018, phase: 2.1 },
-      { amp: 12, freq: 0.018, speed: 0.025, phase: 4.3 }
-    ];
-
-    var particles = [];
-    for (var i = 0; i < 40; i++) {
-      particles.push({
-        x: Math.random() * W, y: Math.random(),
-        size: Math.random() * 2.5 + 0.8, speed: Math.random() * 0.4 + 0.15,
-        drift: Math.random() * 3 - 1.5, opacity: Math.random() * 0.4 + 0.1
-      });
-    }
-
-    var time = 0;
-
-    function waveY(x, t) {
-      var y = 0;
-      for (var w = 0; w < waves.length; w++) {
-        y += Math.sin(x * waves[w].freq + t * waves[w].speed + waves[w].phase) * waves[w].amp;
-      }
-      return seaLevel + y;
-    }
-
-    function hexToRgb(hex) {
-      var r = parseInt(hex.slice(1,3), 16);
-      var g = parseInt(hex.slice(3,5), 16);
-      var b = parseInt(hex.slice(5,7), 16);
-      return {r: r, g: g, b: b};
-    }
-
-    function drawOcean() {
-      seaColor = getComputedStyle(document.documentElement).getPropertyValue('--sea-color').trim() || '#020414';
-      var c = hexToRgb(seaColor);
-      var t = time * 0.016;
-
-      ctx.clearRect(0, 0, W, H);
-
-      var grad = ctx.createLinearGradient(0, seaLevel - 10, 0, H);
-      grad.addColorStop(0, 'rgba(' + c.r + ',' + c.g + ',' + c.b + ',0.7)');
-      grad.addColorStop(1, 'rgba(' + Math.max(c.r-15,0) + ',' + Math.max(c.g-15,0) + ',' + Math.max(c.b-15,0) + ',0.95)');
-      ctx.fillStyle = grad;
-      ctx.fillRect(0, seaLevel - 10, W, H - seaLevel + 10);
-
-      for (var w = 0; w < waves.length; w++) {
-        var alpha = 0.5 - w * 0.12;
-        ctx.beginPath();
-        ctx.moveTo(0, H);
-        for (var x = 0; x <= W; x += 3) {
-          ctx.lineTo(x, waveY(x, t));
-        }
-        ctx.lineTo(W, H);
-        ctx.closePath();
-        ctx.fillStyle = 'rgba(' + Math.min(c.r+40,255) + ',' + Math.min(c.g+50,255) + ',' + Math.min(c.b+60,255) + ',' + alpha + ')';
-        ctx.fill();
-      }
-
-      for (var i = 0; i < particles.length; i++) {
-        var p = particles[i];
-        p.x += p.speed + p.drift * 0.01;
-        if (p.x > W + 20) p.x = -20;
-        var surfaceY = waveY(p.x, t);
-        var shimmer = Math.sin(time * 0.04 + p.x * 0.008 + p.y * 10) * 0.4 + 0.6;
-        var sparkle = Math.sin(time * 0.07 + p.x * 0.02 + p.y * 20) > 0.85 ? 1 : 0;
-        ctx.beginPath();
-        ctx.arc(p.x, surfaceY - p.size * 1.5, p.size * (sparkle ? 2 : 1), 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255,255,255,' + (p.opacity * shimmer + sparkle * 0.3) + ')';
-        ctx.fill();
-      }
-
-      ctx.beginPath();
-      ctx.moveTo(0, waveY(0, t));
-      for (var x = 0; x <= W; x += 4) {
-        ctx.lineTo(x, waveY(x, t));
-      }
-      ctx.strokeStyle = 'rgba(255,255,255,0.06)';
-      ctx.lineWidth = 2;
-      ctx.stroke();
-
-      time++;
-      animId = requestAnimationFrame(drawOcean);
-    }
-
-    drawOcean();
-
-    window.addEventListener('resize', function() {
-      resize();
-      if (animId) cancelAnimationFrame(animId);
-      drawOcean();
-    });
-  })();
-
-  /* ---- Video audio (audio toggle button + scroll fade) ---- */
+  /* ---- Video audio (immediate auto-start + toggle + scroll fade) ---- */
   (function() {
     var video = document.querySelector('.hero-video');
     var toggle = document.getElementById('audio-toggle');
@@ -231,17 +120,34 @@
       else startAudio();
     });
 
-    /* Auto-start audio on first user interaction with the page */
+    /* Auto-start audio immediately (browser may block — toggle is fallback) */
     var autoStarted = false;
-    function autoStartAudio() {
+    function tryAutoStart() {
       if (autoStarted) return;
       autoStarted = true;
-      if (!isPlaying) startAudio();
-      document.removeEventListener('click', autoStartAudio);
-      document.removeEventListener('touchstart', autoStartAudio);
+      video.muted = false;
+      video.volume = 0;
+      var vol = 0;
+      var fadeIn = function() {
+        vol = Math.min(vol + 0.015, 0.3);
+        setVolume(vol);
+        if (vol < 0.3) {
+          try { requestAnimationFrame(fadeIn); } catch(e) {}
+        } else {
+          isPlaying = true;
+          toggle.classList.remove('muted');
+        }
+      };
+      try { fadeIn(); } catch(e) { video.muted = true; }
     }
-    document.addEventListener('click', autoStartAudio, { once: true });
-    document.addEventListener('touchstart', autoStartAudio, { once: true });
+
+    tryAutoStart();
+    document.addEventListener('click', function() {
+      if (!isPlaying) startAudio();
+    }, { once: true });
+    document.addEventListener('touchstart', function() {
+      if (!isPlaying) startAudio();
+    }, { once: true });
 
     /* Fade audio out on scroll past hero */
     window.addEventListener('scroll', function () {

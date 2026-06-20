@@ -254,15 +254,6 @@ main { flex: 1; }
 
 .hero-sun.visible { opacity: 0.6; }
 
-.hero-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  display: block;
-}
-
 .hero-sailboat {
   position: absolute;
   bottom: 28%;
