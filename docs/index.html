@@ -24,21 +24,20 @@ permalink: /
     <div class="hero-links">
       <a href="https://github.com/patrick204nqh">GitHub</a>
       <a href="https://linkedin.com/in/patrick204nqh">LinkedIn</a>
-      <a href="mailto:patrick204nqh@outlook.com">Email</a>
+      <a href="mailto:patrick204nqh@gmail.com">Email</a>
     </div>
   </div>
 
-  <div class="scroll-indicator">
-    <span>Scroll to explore</span>
-    <div class="scroll-line"></div>
-  </div>
+  <button class="audio-toggle" id="audio-toggle" aria-label="Toggle ocean audio" title="Listen to the waves">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg>
+  </button>
 </section>
 
 <section class="page-section" id="about">
   <div class="container">
     <h2 class="section-heading reveal">Every line of code is a step forward.</h2>
     <div class="section-body reveal reveal-delay-1">
-      <p>I'm Patrick — a backend engineer in Saigon, working with Ruby on Rails, Laravel, and whatever else gets the job done. I contribute to open source, write about what I learn, and believe the best solutions come from curiosity, not certainty.</p>
+      <p>I'm Patrick, a Software Engineer and Problem Solver in Sai Gon working with Ruby, Go, JavaScript, and whatever else gets the job done. I contribute to open source, write about what I learn, and believe the best solutions come from curiosity, not certainty.</p>
     </div>
 
     <div class="about-flow">
@@ -46,7 +45,7 @@ permalink: /
         <span class="about-marker">&#8594;</span>
         <div>
           <h3>Craft over hype</h3>
-          <p>Ruby, Python, Go — the right tool, not the trendy one.</p>
+          <p>Ruby, Python, Go: the right tool, not the trendy one.</p>
         </div>
       </div>
       <div class="about-node reveal reveal-delay-1">
@@ -79,31 +78,62 @@ permalink: /
     <p class="section-label reveal">Reach out</p>
     <h2 class="section-heading reveal reveal-delay-1">Let's chart a course together.</h2>
     <div class="section-body reveal reveal-delay-2">
-      <p>Project idea, collaboration, or just to say hello — the inbox is always open.</p>
+      <p>Project idea, collaboration, or just to say hello. The inbox is always open.</p>
     </div>
 
     <div class="contact-links">
-      <a href="mailto:patrick204nqh@outlook.com" class="contact-link reveal">
-        <span class="contact-icon">&#9993;</span>
+      <a href="mailto:patrick204nqh@gmail.com" class="contact-link reveal">
+        <span class="contact-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+        </span>
         <span class="contact-detail">
           <span class="contact-label">Email</span>
-          <span class="contact-value">patrick204nqh@outlook.com</span>
+          <span class="contact-value">patrick204nqh@gmail.com</span>
         </span>
       </a>
       <a href="https://github.com/patrick204nqh" class="contact-link reveal reveal-delay-1">
-        <span class="contact-icon">&#128187;</span>
+        <span class="contact-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+        </span>
         <span class="contact-detail">
           <span class="contact-label">GitHub</span>
           <span class="contact-value">@patrick204nqh</span>
         </span>
       </a>
       <a href="https://linkedin.com/in/patrick204nqh" class="contact-link reveal reveal-delay-2">
-        <span class="contact-icon">&#128101;</span>
+        <span class="contact-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </span>
         <span class="contact-detail">
           <span class="contact-label">LinkedIn</span>
           <span class="contact-value">in/patrick204nqh</span>
         </span>
       </a>
+    </div>
+  </div>
+</section>
+
+<section class="page-section" id="github-projects">
+  <div class="container">
+    <h2 class="section-heading reveal">Open source</h2>
+    <div class="section-body reveal reveal-delay-1">
+      <p>Public work on GitHub from a developer who ships.</p>
+    </div>
+    <div class="github-stats reveal reveal-delay-1" id="gh-stats">
+      <div class="gh-stat">
+        <span class="gh-stat-value" id="gh-repo-count">--</span>
+        <span class="gh-stat-label">repositories</span>
+      </div>
+      <div class="gh-stat">
+        <span class="gh-stat-value" id="gh-star-count">--</span>
+        <span class="gh-stat-label">stars earned</span>
+      </div>
+    </div>
+    <div class="github-repos" id="gh-repos">
+      <p class="section-body" style="color:var(--text-muted)">Loading projects...</p>
+    </div>
+    <div class="github-footer reveal reveal-delay-2">
+      <a href="/projects/" class="github-all-link">View all projects</a>
     </div>
   </div>
 </section>

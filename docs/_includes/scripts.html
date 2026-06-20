@@ -184,56 +184,143 @@
     });
   })();
 
-  /* ---- Video audio (unmute on interaction, fade on scroll) ---- */
+  /* ---- Video audio (audio toggle button + scroll fade) ---- */
   (function() {
     var video = document.querySelector('.hero-video');
-    if (!video) return;
-    var started = false;
-    function startVideoAudio() {
-      if (started) return;
-      started = true;
+    var toggle = document.getElementById('audio-toggle');
+    if (!video || !toggle) return;
+    var isPlaying = false;
+    var fadeTimer;
+
+    function setVolume(v) {
+      video.volume = Math.max(0, Math.min(v, 0.3));
+    }
+
+    function startAudio() {
+      if (isPlaying) return;
+      isPlaying = true;
       video.muted = false;
-      video.volume = 0;
+      setVolume(0);
+      toggle.classList.remove('muted');
+      var vol = 0;
       var fadeIn = function() {
-        var v = video.volume;
-        if (v < 0.35) { video.volume = Math.min(v + 0.02, 0.35); requestAnimationFrame(fadeIn); }
+        vol = Math.min(vol + 0.015, 0.3);
+        setVolume(vol);
+        if (vol < 0.3) requestAnimationFrame(fadeIn);
       };
       fadeIn();
-      document.removeEventListener('click', startVideoAudio);
-      document.removeEventListener('touchstart', startVideoAudio);
-      document.removeEventListener('scroll', startVideoAudio);
     }
-    document.addEventListener('click', startVideoAudio);
-    document.addEventListener('touchstart', startVideoAudio);
-    document.addEventListener('scroll', startVideoAudio);
-    var scrollVideoTimer;
+
+    function stopAudio() {
+      if (!isPlaying) return;
+      isPlaying = false;
+      toggle.classList.add('muted');
+      var vol = video.volume;
+      var fadeOut = function() {
+        vol = Math.max(vol - 0.02, 0);
+        setVolume(vol);
+        if (vol > 0) requestAnimationFrame(fadeOut);
+        else video.muted = true;
+      };
+      fadeOut();
+    }
+
+    toggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      if (isPlaying) stopAudio();
+      else startAudio();
+    });
+
+    /* Auto-start audio on first user interaction with the page */
+    var autoStarted = false;
+    function autoStartAudio() {
+      if (autoStarted) return;
+      autoStarted = true;
+      if (!isPlaying) startAudio();
+      document.removeEventListener('click', autoStartAudio);
+      document.removeEventListener('touchstart', autoStartAudio);
+    }
+    document.addEventListener('click', autoStartAudio, { once: true });
+    document.addEventListener('touchstart', autoStartAudio, { once: true });
+
+    /* Fade audio out on scroll past hero */
     window.addEventListener('scroll', function () {
-      if (!started) return;
-      clearTimeout(scrollVideoTimer);
-      scrollVideoTimer = setTimeout(function () {
+      if (!isPlaying) return;
+      clearTimeout(fadeTimer);
+      fadeTimer = setTimeout(function () {
         var hero = document.getElementById('hero');
         if (!hero) return;
         var heroBottom = hero.offsetHeight;
         var scrollY = window.scrollY || window.pageYOffset;
-        var fadeProgress = Math.min(scrollY / (heroBottom * 0.6), 1);
-        video.volume = Math.max(0.35 * (1 - fadeProgress), 0);
-      }, 50);
+        var fadeProgress = Math.min(scrollY / (heroBottom * 0.5), 1);
+        setVolume(0.3 * (1 - fadeProgress));
+      }, 30);
     }, { passive: true });
   })();
 
-  /* ---- Scroll reveal ---- */
-  var revealTimer;
-  function checkReveals() {
-    var items = document.querySelectorAll('.reveal');
-    for (var i = 0; i < items.length; i++) {
-      var rect = items[i].getBoundingClientRect();
-      if (rect.top < window.innerHeight - 100) items[i].classList.add('visible');
+  /* ---- GitHub data for homepage ---- */
+  (function() {
+    var repoCountEl = document.getElementById('gh-repo-count');
+    var starCountEl = document.getElementById('gh-star-count');
+    var reposEl = document.getElementById('gh-repos');
+    if (!reposEl) return;
+
+    function renderRepo(repo) {
+      var card = document.createElement('a');
+      card.className = 'gh-repo-card';
+      card.href = repo.html_url;
+      card.target = '_blank';
+      card.rel = 'noopener noreferrer';
+      card.innerHTML =
+        '<span class="gh-repo-name">' + repo.name + '</span>' +
+        '<span class="gh-repo-desc">' + (repo.description || '') + '</span>' +
+        '<span class="gh-repo-meta">' +
+          (repo.language ? '<span class="gh-repo-lang">' + repo.language + '</span>' : '') +
+          (repo.stargazers_count > 0 ? '<span class="gh-repo-stars">&#9733; ' + repo.stargazers_count + '</span>' : '') +
+        '</span>';
+      return card;
     }
-  }
-  window.addEventListener('scroll', function () {
-    clearTimeout(revealTimer);
-    revealTimer = setTimeout(checkReveals, 60);
-  }, { passive: true });
-  window.addEventListener('load', checkReveals);
+
+    fetch('https://api.github.com/users/patrick204nqh/repos?per_page=100&type=public&sort=updated')
+      .then(function(r) { return r.json(); })
+      .then(function(repos) {
+        if (!Array.isArray(repos)) throw new Error('Invalid response');
+        var filtered = repos.filter(function(r) { return !r.fork && !r.archived; });
+        var totalStars = filtered.reduce(function(sum, r) { return sum + r.stargazers_count; }, 0);
+
+        if (repoCountEl) repoCountEl.textContent = filtered.length;
+        if (starCountEl) starCountEl.textContent = totalStars;
+
+        var sorted = filtered.sort(function(a, b) { return b.stargazers_count - a.stargazers_count; });
+        var top = sorted.slice(0, 4);
+
+        reposEl.innerHTML = '';
+        if (top.length === 0) {
+          reposEl.innerHTML = '<p class="section-body" style="color:var(--text-muted);grid-column:1/-1">No public repositories yet.</p>';
+        } else {
+          top.forEach(function(r) { reposEl.appendChild(renderRepo(r)); });
+        }
+      })
+      .catch(function() {
+        if (repoCountEl) repoCountEl.textContent = '\u2014';
+        if (starCountEl) starCountEl.textContent = '\u2014';
+        reposEl.innerHTML = '<p class="section-body" style="color:var(--text-muted);grid-column:1/-1">Could not load GitHub data.</p>';
+      });
+  })();
+
+  /* ---- Scroll reveal (IntersectionObserver, no scroll-listener) ---- */
+  (function() {
+    if (!window.IntersectionObserver) return;
+    var items = document.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -80px 0px', threshold: 0.1 });
+    items.forEach(function(el) { observer.observe(el); });
+  })();
 })();
 </script>
