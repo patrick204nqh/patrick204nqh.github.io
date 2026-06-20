@@ -1,0 +1,613 @@
+---
+layout: default
+title: "Brand Kit — PATRICK204NQH"
+permalink: /brand/
+---
+
+<style>
+  .brand-board {
+    padding: 6rem 1.5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .board-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: rgba(255,255,255,0.06);
+  }
+
+  .board-panel {
+    background: #0b0e17;
+    padding: 2rem;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+
+  .panel-label {
+    position: absolute;
+    top: 0.75rem;
+    left: 1rem;
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.55rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(232,237,245,0.25);
+  }
+
+  .panel-number {
+    position: absolute;
+    bottom: 0.75rem;
+    right: 1rem;
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.55rem;
+    color: rgba(232,237,245,0.15);
+  }
+
+  /* Panel 1: Logo Cover */
+  .logo-cover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .logo-mark {
+    width: 80px;
+    height: 80px;
+  }
+
+  .logo-mark svg { width: 100%; height: 100%; }
+
+  .wordmark {
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #e8edf5;
+  }
+
+  .wordmark-sub {
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    color: rgba(232,237,245,0.3);
+    margin-top: -0.5rem;
+  }
+
+  /* Panel 4: Tagline */
+  .tagline-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .tagline-panel h2 {
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #e8edf5;
+    letter-spacing: -0.5px;
+    line-height: 1.3;
+  }
+
+  .tagline-panel .tagline-sub {
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.65rem;
+    color: rgba(232,237,245,0.3);
+    letter-spacing: 1px;
+  }
+
+  /* Color swatches */
+  .color-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .color-swatch {
+    border-radius: 8px;
+    padding: 1rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .color-swatch .name {
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.55rem;
+    color: rgba(232,237,245,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .color-swatch .value {
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.5rem;
+    color: rgba(232,237,245,0.3);
+  }
+
+  /* Typography panel */
+  .type-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .type-specimen {
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    padding-bottom: 0.75rem;
+  }
+
+  .type-specimen:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .type-specimen .specimen-label {
+    font-size: 0.5rem;
+    font-family: "SF Mono", "Fira Code", monospace;
+    color: rgba(232,237,245,0.25);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.25rem;
+  }
+
+  .type-specimen .specimen-text {
+    font-size: 1.5rem;
+    color: #e8edf5;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+  }
+
+  .type-specimen .specimen-body {
+    font-size: 0.75rem;
+    color: rgba(232,237,245,0.5);
+    line-height: 1.4;
+  }
+
+  .type-specimen .specimen-mono {
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.65rem;
+    color: rgba(232,237,245,0.4);
+    letter-spacing: 0;
+  }
+
+  /* Digital panel */
+  .browser-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(255,255,255,0.04);
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+  }
+
+  .browser-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+  }
+
+  .browser-url {
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.55rem;
+    color: rgba(232,237,245,0.3);
+    margin-left: 0.25rem;
+  }
+
+  .prompt-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 0.75rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 100px;
+    margin-top: 0.5rem;
+  }
+
+  .prompt-bar .prompt-icon {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .prompt-bar .prompt-icon svg { width: 100%; height: 100%; }
+
+  .prompt-bar .prompt-text {
+    font-family: "Inter", sans-serif;
+    font-size: 0.65rem;
+    color: rgba(232,237,245,0.3);
+  }
+
+  .prompt-bar .prompt-btn {
+    margin-left: auto;
+    padding: 0.2rem 0.5rem;
+    background: rgba(122,183,239,0.15);
+    border-radius: 4px;
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.5rem;
+    color: #7ab7ef;
+  }
+
+  /* Atmosphere panel */
+  .atmosphere-panel {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0c0f25 0%, #020414 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .atmosphere-panel img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+  }
+
+  .atmosphere-overlay {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+  }
+
+  .atmosphere-overlay h3 {
+    font-family: "DM Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    opacity: 0.8;
+  }
+
+  .atmosphere-overlay .atmo-sub {
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.5rem;
+    opacity: 0.3;
+    margin-top: 0.25rem;
+    letter-spacing: 1px;
+  }
+
+  /* System detail / chip row */
+  .chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .chip {
+    padding: 0.3rem 0.6rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 100px;
+    font-family: "Inter", sans-serif;
+    font-size: 0.55rem;
+    color: rgba(232,237,245,0.5);
+  }
+
+  .chip.active {
+    background: rgba(122,183,239,0.12);
+    border-color: rgba(122,183,239,0.3);
+    color: #7ab7ef;
+  }
+
+  /* Construction panel */
+  .construction-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .construction-grid {
+    width: 80px;
+    height: 80px;
+    position: relative;
+  }
+
+  .construction-grid svg { width: 100%; height: 100%; }
+
+  .construction-arrow {
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 1rem;
+    color: rgba(232,237,245,0.15);
+  }
+
+  /* Card mockup */
+  .card-mockup {
+    width: 100%;
+    max-width: 180px;
+    margin: 0 auto;
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(122,183,239,0.08), rgba(11,14,23,0.5));
+    border: 1px solid rgba(122,183,239,0.15);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .card-mockup .card-name {
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #e8edf5;
+  }
+
+  .card-mockup .card-role {
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.5rem;
+    color: rgba(232,237,245,0.3);
+    letter-spacing: 0.5px;
+  }
+
+  .card-mockup .card-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+    margin: 0.25rem 0;
+  }
+
+  .card-mockup .card-link {
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 0.5rem;
+    color: rgba(122,183,239,0.5);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .board-grid { grid-template-columns: 1fr 1fr; }
+    .board-panel { min-height: 220px; padding: 1.5rem; }
+  }
+
+  @media (max-width: 480px) {
+    .board-grid { grid-template-columns: 1fr; }
+    .board-panel { min-height: 200px; }
+  }
+</style>
+
+<div class="brand-board">
+  <div style="margin-bottom: 2rem;">
+    <p style="font-family: 'SF Mono', monospace; font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem;">Brand Identity System</p>
+    <h1 style="font-family: 'DM Sans', sans-serif; font-size: 2rem; font-weight: 550; letter-spacing: -0.5px;">PATRICK204NQH</h1>
+    <p style="font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--text-dim); margin-top: 0.5rem;">The Open Water — a single vessel navigating code, open source, and the space between them.</p>
+  </div>
+
+  <div class="board-grid">
+
+    <!-- 1. Logo Cover -->
+    <div class="board-panel" style="grid-column: span 1;">
+      <span class="panel-label">Logo / Wordmark</span>
+      <div class="logo-cover">
+        <div class="logo-mark">
+          <svg viewBox="12 5 165 165" fill="none">
+            <path d="M25 148 C30 148 35 165 48 168 L152 168 C165 165 170 148 175 148" stroke="#7ab7ef" stroke-width="3" stroke-linecap="round"/>
+            <line x1="100" y1="20" x2="100" y2="148" stroke="#7ab7ef" stroke-width="3" stroke-linecap="round"/>
+            <line x1="72" y1="45" x2="72" y2="148" stroke="#7ab7ef" stroke-width="2" stroke-linecap="round"/>
+            <line x1="132" y1="50" x2="132" y2="148" stroke="#7ab7ef" stroke-width="2" stroke-linecap="round"/>
+            <path d="M100 25 C130 25 160 55 168 115 L100 120" stroke="#7ab7ef" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M100 25 C95 25 100 70 100 120" stroke="#7ab7ef" stroke-width="1" opacity="0.3"/>
+            <path d="M72 50 C55 50 40 65 32 95 L72 100" stroke="#7ab7ef" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M132 55 C148 55 160 65 168 95 L132 100" stroke="#7ab7ef" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M72 50 C65 60 40 80 18 105" stroke="#7ab7ef" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+            <line x1="55" y1="128" x2="18" y2="105" stroke="#7ab7ef" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+            <path d="M100 20 L100 8 L132 13 L100 20" stroke="#7ab7ef" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+        <div class="wordmark">PATRICK204NQH</div>
+        <div class="wordmark-sub">MONOLINE</div>
+      </div>
+      <span class="panel-number">01</span>
+    </div>
+
+    <!-- 2. Logo Construction -->
+    <div class="board-panel">
+      <span class="panel-label">Construction</span>
+      <div class="construction-diagram">
+        <div class="construction-grid">
+          <svg viewBox="0 0 120 120" fill="none">
+            <circle cx="60" cy="60" r="50" stroke="rgba(232,237,245,0.06)" stroke-width="0.5"/>
+            <circle cx="60" cy="60" r="40" stroke="rgba(232,237,245,0.04)" stroke-width="0.5"/>
+            <line x1="60" y1="10" x2="60" y2="110" stroke="rgba(232,237,245,0.04)" stroke-width="0.5"/>
+            <line x1="10" y1="60" x2="110" y2="60" stroke="rgba(232,237,245,0.04)" stroke-width="0.5"/>
+            <path d="M30 70 L90 70 L80 82 L40 82 Z" fill="#7ab7ef" opacity="0.15"/>
+            <rect x="57" y="25" width="4" height="50" rx="1" fill="#7ab7ef" opacity="0.15"/>
+            <path d="M59 30 L59 65 L85 65 Z" fill="#7ab7ef" opacity="0.1"/>
+            <path d="M57 35 L57 60 L35 60 Z" fill="#7ab7ef" opacity="0.07"/>
+            <text x="8" y="8" fill="rgba(232,237,245,0.12)" font-size="5" font-family="monospace">G + S</text>
+          </svg>
+        </div>
+        <span class="construction-arrow">&rarr;</span>
+        <div class="logo-mark">
+          <svg viewBox="12 5 165 165" fill="none">
+            <path d="M25 148 C30 148 35 165 48 168 L152 168 C165 165 170 148 175 148" stroke="#7ab7ef" stroke-width="3" stroke-linecap="round"/>
+            <line x1="100" y1="20" x2="100" y2="148" stroke="#7ab7ef" stroke-width="3" stroke-linecap="round"/>
+            <line x1="72" y1="45" x2="72" y2="148" stroke="#7ab7ef" stroke-width="2" stroke-linecap="round"/>
+            <line x1="132" y1="50" x2="132" y2="148" stroke="#7ab7ef" stroke-width="2" stroke-linecap="round"/>
+            <path d="M100 25 C130 25 160 55 168 115 L100 120" stroke="#7ab7ef" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M100 25 C95 25 100 70 100 120" stroke="#7ab7ef" stroke-width="1" opacity="0.3"/>
+            <path d="M72 50 C55 50 40 65 32 95 L72 100" stroke="#7ab7ef" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M132 55 C148 55 160 65 168 95 L132 100" stroke="#7ab7ef" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M72 50 C65 60 40 80 18 105" stroke="#7ab7ef" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+            <line x1="55" y1="128" x2="18" y2="105" stroke="#7ab7ef" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+            <path d="M100 20 L100 8 L132 13 L100 20" stroke="#7ab7ef" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+      </div>
+      <span class="panel-number">02</span>
+    </div>
+
+    <!-- 3. Digital Application -->
+    <div class="board-panel">
+      <span class="panel-label">Digital Surface</span>
+      <div style="display:flex;flex-direction:column;gap:0.75rem;">
+        <div class="browser-bar">
+          <div style="display:flex;gap:4px;">
+            <div class="browser-dot" style="background:#ef4444;"></div>
+            <div class="browser-dot" style="background:#f59e0b;"></div>
+            <div class="browser-dot" style="background:#22c55e;"></div>
+          </div>
+          <span class="browser-url">patrick204nqh.github.io</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.5rem;">
+          <div style="width:24px;height:24px;border-radius:6px;background:rgba(122,183,239,0.15);display:flex;align-items:center;justify-content:center;">
+            <svg width="14" height="14" viewBox="12 5 165 165" fill="none"><path d="M25 148 C30 148 35 165 48 168 L152 168 C165 165 170 148 175 148" stroke="#7ab7ef" stroke-width="3" stroke-linecap="round"/><line x1="100" y1="20" x2="100" y2="148" stroke="#7ab7ef" stroke-width="3" stroke-linecap="round"/><path d="M100 25 C130 25 160 55 168 115 L100 120" stroke="#7ab7ef" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div style="font-family:'Inter',sans-serif;font-size:0.6rem;color:#e8edf5;">Patrick</div>
+            <div style="font-family:'SF Mono',monospace;font-size:0.45rem;color:rgba(232,237,245,0.3);">Software engineer</div>
+          </div>
+        </div>
+        <div class="prompt-bar">
+          <span class="prompt-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(232,237,245,0.3)" stroke-width="2"><polyline points="4 7 10 12 4 17"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+          </span>
+          <span class="prompt-text">Turning ideas into innovative solutions</span>
+          <span class="prompt-btn">&#8981; G</span>
+        </div>
+      </div>
+      <span class="panel-number">03</span>
+    </div>
+
+    <!-- 4. Tagline / Essence -->
+    <div class="board-panel">
+      <span class="panel-label">Brand Essence</span>
+      <div class="tagline-panel" style="flex:1;">
+        <h2 style="font-size:1.5rem;">Navigate.<br>Build.<br>Ship.</h2>
+        <span class="tagline-sub">Turning ideas into innovative solutions</span>
+      </div>
+      <span class="panel-number">04</span>
+    </div>
+
+    <!-- 5. Color System -->
+    <div class="board-panel">
+      <span class="panel-label">Color System</span>
+      <div class="color-grid">
+        <div class="color-swatch" style="background:#0b0e17;border:1px solid rgba(255,255,255,0.06);">
+          <span class="name">Deep Water</span>
+          <span class="value">#0b0e17</span>
+        </div>
+        <div class="color-swatch" style="background:#020414;border:1px solid rgba(255,255,255,0.04);">
+          <span class="name">Trench</span>
+          <span class="value">#020414</span>
+        </div>
+        <div class="color-swatch" style="background:#7ab7ef;">
+          <span class="name" style="color:rgba(0,0,0,0.5);">Beacon</span>
+          <span class="value" style="color:rgba(0,0,0,0.35);">#7ab7ef</span>
+        </div>
+        <div class="color-swatch" style="background:#e8edf5;">
+          <span class="name" style="color:rgba(0,0,0,0.5);">Foam</span>
+          <span class="value" style="color:rgba(0,0,0,0.35);">#e8edf5</span>
+        </div>
+      </div>
+      <span class="panel-number">05</span>
+    </div>
+
+    <!-- 6. Typography -->
+    <div class="board-panel">
+      <span class="panel-label">Typography</span>
+      <div class="type-panel">
+        <div class="type-specimen">
+          <div class="specimen-label">Display</div>
+          <div class="specimen-text" style="font-family:'DM Sans',sans-serif;">DM Sans</div>
+        </div>
+        <div class="type-specimen">
+          <div class="specimen-label">Body</div>
+          <div class="specimen-body">Inter — 15px/1.7 — 400 weight. Clean, precise, readable at every size.</div>
+        </div>
+        <div class="type-specimen">
+          <div class="specimen-label">Mono</div>
+          <div class="specimen-mono">SF Mono / Fira Code — 0.75rem. For code and metadata.</div>
+        </div>
+      </div>
+      <span class="panel-number">06</span>
+    </div>
+
+    <!-- 7. Physical Application -->
+    <div class="board-panel">
+      <span class="panel-label">Physical / Identity</span>
+      <div class="card-mockup">
+        <div style="display:flex;align-items:center;gap:0.5rem;">
+          <div style="width:28px;height:28px;border-radius:6px;background:rgba(122,183,239,0.15);display:flex;align-items:center;justify-content:center;">
+            <svg width="18" height="18" viewBox="12 5 165 165" fill="none"><path d="M25 148 C30 148 35 165 48 168 L152 168 C165 165 170 148 175 148" stroke="#7ab7ef" stroke-width="3" stroke-linecap="round"/><line x1="100" y1="20" x2="100" y2="148" stroke="#7ab7ef" stroke-width="3" stroke-linecap="round"/><path d="M100 25 C130 25 160 55 168 115 L100 120" stroke="#7ab7ef" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+          </div>
+          <div>
+            <div class="card-name">Patrick</div>
+            <div class="card-role">Software Engineer</div>
+          </div>
+        </div>
+        <div class="card-divider"></div>
+        <span class="card-link">github.com/patrick204nqh</span>
+        <span class="card-link" style="margin-top:-0.25rem;">patrick204nqh@outlook.com</span>
+      </div>
+      <span class="panel-number">07</span>
+    </div>
+
+    <!-- 8. Image Direction -->
+    <div class="board-panel atmosphere-panel">
+      <span class="panel-label" style="z-index:2;">Image Direction</span>
+      <div class="atmosphere-overlay">
+        <h3>Open Water</h3>
+        <div class="atmo-sub">Cinematic · Deep · Horizon</div>
+      </div>
+      <div class="atmosphere-overlay" style="position:absolute;bottom:1rem;left:1rem;text-align:left;">
+        <div style="display:flex;gap:0.25rem;">
+          <div style="width:20px;height:20px;border-radius:4px;background:#0c0f25;border:1px solid rgba(255,255,255,0.1);"></div>
+          <div style="width:20px;height:20px;border-radius:4px;background:#020414;border:1px solid rgba(255,255,255,0.08);"></div>
+          <div style="width:20px;height:20px;border-radius:4px;background:#1e3a5f;border:1px solid rgba(255,255,255,0.06);"></div>
+        </div>
+      </div>
+      <span class="panel-number" style="z-index:2;">08</span>
+    </div>
+
+    <!-- 9. System Detail -->
+    <div class="board-panel">
+      <span class="panel-label">System Details</span>
+      <div style="display:flex;flex-direction:column;gap:0.75rem;">
+        <div class="chip-row">
+          <span class="chip active">github.com/patrick204nqh</span>
+          <span class="chip">blog</span>
+          <span class="chip">projects</span>
+        </div>
+        <div class="chip-row">
+          <span class="chip">ruby</span>
+          <span class="chip">rails</span>
+          <span class="chip">go</span>
+          <span class="chip">python</span>
+        </div>
+        <div style="display:flex;gap:0.5rem;border-top:1px solid rgba(255,255,255,0.04);padding-top:0.75rem;">
+          <div style="width:28px;height:28px;border-radius:8px;background:rgba(122,183,239,0.12);border:1px solid rgba(122,183,239,0.2);display:flex;align-items:center;justify-content:center;">
+            <svg width="14" height="14" viewBox="12 5 165 165" fill="none"><path d="M25 148 C30 148 35 165 48 168 L152 168 C165 165 170 148 175 148" stroke="#7ab7ef" stroke-width="3" stroke-linecap="round"/><line x1="100" y1="20" x2="100" y2="148" stroke="#7ab7ef" stroke-width="3" stroke-linecap="round"/><path d="M100 25 C130 25 160 55 168 115 L100 120" stroke="#7ab7ef" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+          </div>
+          <div style="width:28px;height:28px;border-radius:8px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);"></div>
+          <div style="width:28px;height:28px;border-radius:8px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);"></div>
+          <div style="width:28px;height:28px;border-radius:8px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);"></div>
+        </div>
+      </div>
+      <span class="panel-number">09</span>
+    </div>
+
+  </div>
+
+  <div style="margin-top:1.5rem;display:flex;justify-content:space-between;align-items:center;">
+    <p style="font-family:'SF Mono',monospace;font-size:0.5rem;color:rgba(232,237,245,0.15);letter-spacing:1px;">PATRICK204NQH — BRAND IDENTITY SYSTEM v1.0</p>
+    <p style="font-family:'SF Mono',monospace;font-size:0.5rem;color:rgba(232,237,245,0.15);letter-spacing:1px;">THE OPEN WATER</p>
+  </div>
+</div>
