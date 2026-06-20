@@ -1,8 +1,7 @@
-# patrick204nqh.github.io
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fpatrick204nqh.com&label=patrick204nqh.com)](https://patrick204nqh.com)
+[![GitHub Pages](https://img.shields.io/github/deployments/patrick204nqh/patrick204nqh.github.io/github-pages?label=deploy)](https://patrick204nqh.github.io)
 
-Personal website. Built with Jekyll, hosted on GitHub Pages.
-
-[patrick204nqh.github.io](https://patrick204nqh.github.io)
+Personal website. Built with Jekyll, hosted on [GitHub Pages](https://pages.github.com).
 
 ## Local dev
 
