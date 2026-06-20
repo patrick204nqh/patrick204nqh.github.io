@@ -21,6 +21,7 @@ vendor/ruby/
 *.sqlite3
 *.sql
 *.env
+*.envrc
 
 # System files
 .DS_Store
@@ -40,3 +41,15 @@ _site/
 # Ignore package.json
 package.json
 yarn.lock
+
+# AI
+.agents/skills
+.claude/skills
+.opencode/skills
+.opencode/command
+.opencode/plugins
+.cache/
+
+# Media source files (keep compressed only)
+docs/assets/media/hero-1080p.mp4
+docs/assets/media/hero-original.mp4
