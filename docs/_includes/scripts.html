@@ -1,3 +1,4 @@
+<script>
 (function () {
   /* ---- Timezone colors (fixed +07) ---- */
   var palettes = [
@@ -129,14 +130,12 @@
 
       ctx.clearRect(0, 0, W, H);
 
-      // Deep water base
       var grad = ctx.createLinearGradient(0, seaLevel - 10, 0, H);
       grad.addColorStop(0, 'rgba(' + c.r + ',' + c.g + ',' + c.b + ',0.7)');
       grad.addColorStop(1, 'rgba(' + Math.max(c.r-15,0) + ',' + Math.max(c.g-15,0) + ',' + Math.max(c.b-15,0) + ',0.95)');
       ctx.fillStyle = grad;
       ctx.fillRect(0, seaLevel - 10, W, H - seaLevel + 10);
 
-      // Wave fills
       for (var w = 0; w < waves.length; w++) {
         var alpha = 0.5 - w * 0.12;
         ctx.beginPath();
@@ -150,7 +149,6 @@
         ctx.fill();
       }
 
-      // Light particles (sun sparkles on water)
       for (var i = 0; i < particles.length; i++) {
         var p = particles[i];
         p.x += p.speed + p.drift * 0.01;
@@ -164,7 +162,6 @@
         ctx.fill();
       }
 
-      // Foam line on wave crests
       ctx.beginPath();
       ctx.moveTo(0, waveY(0, t));
       for (var x = 0; x <= W; x += 4) {
@@ -239,3 +236,4 @@
   }, { passive: true });
   window.addEventListener('load', checkReveals);
 })();
+</script>
