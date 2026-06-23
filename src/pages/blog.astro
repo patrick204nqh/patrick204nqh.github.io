@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('posts');
+posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout title="Blog">
+  <div class="max-w-[42rem] mx-auto px-6 py-24">
+    <h2 class="font-display text-[clamp(1.5rem,3vw,2.25rem)] font-semibold tracking-[-0.75px] leading-[1.2] mb-8">All Posts</h2>
+    <div class="flex flex-col gap-6">
+      {posts.length === 0 ? (
+        <p class="text-ink-dim text-sm">No posts yet. Coming soon.</p>
+      ) : posts.map(post => (
+        <article>
+          <h2 class="text-lg font-medium mb-1">
+            <a href={`/blog/${post.slug}`} class="text-ink no-underline hover:text-accent transition-colors">{post.data.title}</a>
+          </h2>
+          <time datetime={post.data.date.toISOString()} class="text-xs text-ink-dim font-mono">{post.data.date.toLocaleDateString('en', { month: 'short', day: 'numeric', year: 'numeric' })}</time>
+          {post.data.excerpt && <p class="text-sm text-ink-dim mt-1">{post.data.excerpt}</p>}
+        </article>
+      ))}
+    </div>
+  </div>
+</Layout>

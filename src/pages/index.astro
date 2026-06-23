@@ -1,0 +1,97 @@
+---
+import Layout from '../layouts/Layout.astro';
+import OceanScene from '../components/OceanScene';
+import ContactSection from '../components/ContactSection.astro';
+import GithubSection from '../components/GithubSection';
+---
+
+<Layout>
+  <OceanScene client:load />
+
+  <div class="hero-sky fixed inset-0 z-[1] pointer-events-none" id="hero-sky"></div>
+
+  <section class="hero relative z-[2] min-h-dvh flex items-center justify-center pointer-events-none" id="hero">
+    <div class="pointer-events-auto text-center text-white px-6 -mt-[6vh] max-w-3xl">
+      <p class="font-mono text-xs tracking-[3px] uppercase opacity-50 mb-6">Patrick</p>
+      <h1 class="font-display text-[clamp(2rem,5.5vw,3.75rem)] font-semibold tracking-[-1.5px] leading-[1.1] mb-5 text-balance" style="text-shadow:0 2px 30px rgba(0,0,0,0.25)">Turning ideas into innovative solutions</h1>
+      <p class="text-[clamp(0.9rem,1.5vw,1.1rem)] opacity-55 max-w-2xl mx-auto mb-8 font-light leading-relaxed">Software engineer navigating code, open source, and the space between them.</p>
+      <div class="flex gap-4 justify-center flex-wrap">
+        <a href="https://github.com/patrick204nqh" class="font-mono text-xs text-white/60 no-underline px-5 py-2 border border-white/10 rounded-[100px] transition-all duration-300 hover:bg-white/10 hover:text-white hover:border-white/25 hover:-translate-y-pill">GitHub</a>
+        <a href="https://linkedin.com/in/patrick204nqh" class="font-mono text-xs text-white/60 no-underline px-5 py-2 border border-white/10 rounded-[100px] transition-all duration-300 hover:bg-white/10 hover:text-white hover:border-white/25 hover:-translate-y-pill">LinkedIn</a>
+        <a href="mailto:patrick204nqh@gmail.com" class="font-mono text-xs text-white/60 no-underline px-5 py-2 border border-white/10 rounded-[100px] transition-all duration-300 hover:bg-white/10 hover:text-white hover:border-white/25 hover:-translate-y-pill">Email</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section relative z-10 py-24 bg-surface border-t border-border" id="about">
+    <div class="max-w-[42rem] mx-auto px-6">
+      <h2 class="font-display text-[clamp(1.5rem,3vw,2.25rem)] font-semibold tracking-[-0.75px] leading-[1.2] mb-6 max-w-[28ch] reveal">Every line of code is a step forward.</h2>
+      <div class="text-ink-dim leading-relaxed max-w-[60ch] text-sm reveal reveal-delay-1">
+        <p>I'm Patrick, a Software Engineer and Problem Solver in Sai Gon working with Ruby, Go, JavaScript, and whatever else gets the job done. I contribute to open source, write about what I learn, and believe the best solutions come from curiosity, not certainty.</p>
+      </div>
+      <div class="flex flex-col mt-10">
+        {[
+          { title: 'Craft over hype', desc: 'Ruby, Python, Go: the right tool, not the trendy one.' },
+          { title: 'Open source', desc: 'Building tools so other developers can ship faster.' },
+          { title: 'Writing it down', desc: 'Hard-earned lessons on architecture, debugging, and shipping.' },
+          { title: 'Always exploring', desc: 'New languages, new patterns, new ways to think about problems.' },
+        ].map((item, i) => (
+          <div class={`flex gap-5 py-5 border-b border-border ${i < 3 ? '' : 'border-b-0'} reveal ${i > 0 ? `reveal-delay-${Math.min(i, 2)}` : ''}`}>
+            <span class="font-mono text-accent/50 shrink-0 w-6 mt-0.5">&rarr;</span>
+            <div>
+              <h3 class="font-display text-base font-semibold mb-1 text-ink">{item.title}</h3>
+              <p class="text-sm text-ink-dim leading-relaxed max-w-[45ch]">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ContactSection />
+  <GithubSection client:load />
+</Layout>
+
+<script>
+  /* Sky gradient (time-of-day palette) */
+  (function() {
+    var palettes = [
+      { name: 'night',     h: [5,7],   skyT: '#0c0f25', skyB: '#161b33', sea: '#020414' },
+      { name: 'dawn',      h: [7,9],   skyT: '#1a1a3e', skyB: '#d4735e', sea: '#0c2340' },
+      { name: 'morning',   h: [9,12],  skyT: '#1a3055', skyB: '#5ba3e6', sea: '#0a7ab5' },
+      { name: 'midday',    h: [12,15], skyT: '#0270b0', skyB: '#7dc4fc', sea: '#025a8a' },
+      { name: 'afternoon', h: [15,18], skyT: '#0a4068', skyB: '#d4850a', sea: '#0c2a4a' },
+      { name: 'sunset',    h: [18,20], skyT: '#1a1535', skyB: '#cc3333', sea: '#0a0f2a' }
+    ];
+    function getPalette() {
+      var h = parseInt(new Date().toLocaleString('en', { hour: 'numeric', hour12: false, timeZone: 'Asia/Ho_Chi_Minh' }), 10);
+      return palettes.find(function(p) { return h >= p.h[0] && h < p.h[1]; }) || palettes[0];
+    }
+    function apply(p) {
+      var root = document.documentElement;
+      root.style.setProperty('--sky-top', p.skyT);
+      root.style.setProperty('--sky-bottom', p.skyB);
+    }
+    apply(getPalette());
+    setInterval(function() { apply(getPalette()); }, 60000);
+
+    /* Scroll reveal */
+    if (window.IntersectionObserver) {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+        });
+      }, { rootMargin: '0px 0px -80px 0px', threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+    }
+  })();
+</script>
+
+<style>
+  .hero-sky {
+    background: radial-gradient(ellipse 70% 60% at 50% 30%, transparent 0%, var(--surface) 100%),
+                linear-gradient(180deg, var(--sky-top, #0c0f25) 0%, var(--sky-bottom, #161b33) 100%);
+    opacity: 0.55;
+    transition: background 1.5s ease;
+  }
+</style>

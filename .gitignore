@@ -1,55 +1,17 @@
-# Jekyll
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-.jekyll-cache/
-.jekyll-metadata
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-
-# Bundler
-.bundle/
-vendor/bundle
-vendor/cache
-vendor/assets
-vendor/ruby/
-
-# Logs and databases
+dist/
+.astro/
+node_modules/
+.DS_Store
+.env
+.envrc
 *.log
 *.sqlite3
-*.sql
-*.env
-*.envrc
-
-# System files
-.DS_Store
-Thumbs.db
-
-# Node modules (if you use Node.js)
-node_modules/
-
-# Temporary files
-tmp/
-temp/
-*.swp
-
-# Site output
-_site/
-
-# Ignore package.json
-package.json
-yarn.lock
-
-# AI
 .agents/skills
 .claude/skills
 .opencode/skills
 .opencode/command
 .opencode/plugins
 .cache/
-
-# Media source files (keep compressed only)
-docs/assets/media/hero-1080p.mp4
-docs/assets/media/hero-original.mp4
+docs/_site/
+docs/.bundle/
+.vscode/

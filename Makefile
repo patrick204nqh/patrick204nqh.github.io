@@ -1,12 +1,10 @@
-SOURCE = docs
+.PHONY: dev build preview
 
-.PHONY: serve build clean
-
-serve:
-	cd $(SOURCE) && bundle exec jekyll serve
+dev:
+	npm run dev
 
 build:
-	cd $(SOURCE) && bundle exec jekyll build
+	npm run build
 
-clean:
-	rm -rf $(SOURCE)/_site
+preview:
+	npm run preview
