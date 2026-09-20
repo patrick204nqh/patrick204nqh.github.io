@@ -1,9 +1,21 @@
 ---
 const year = new Date().getFullYear();
+
+const links = [
+  { href: 'https://github.com/patrick204nqh', label: 'GitHub' },
+  { href: 'https://linkedin.com/in/patrick204nqh', label: 'LinkedIn' },
+  { href: 'https://patrick204nqh.substack.com', label: 'Substack' },
+  { href: 'mailto:patrick204nqh@gmail.com', label: 'Email' },
+];
 ---
 
 <footer class="relative z-10 text-center py-10 text-ink-muted text-xs bg-surface border-t border-border">
-  <div class="max-w-[42rem] mx-auto px-6">
+  <div class="max-w-[42rem] mx-auto px-6 flex flex-col gap-4 items-center">
+    <nav aria-label="Footer" class="flex gap-6">
+      {links.map(link => (
+        <a href={link.href} class="text-ink-dim no-underline hover:text-accent transition-colors font-mono">{link.label}</a>
+      ))}
+    </nav>
     <p>&copy; {year} Patrick. MIT License.</p>
   </div>
 </footer>

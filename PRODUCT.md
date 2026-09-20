@@ -25,7 +25,7 @@ Precise, explorative, grounded. Confident but not loud. Technical without jargon
 
 ## Design Principles
 
-1. **The journey shows, not tells** — every section is a waypoint. The hero is open water, the about section charts the course, projects are the vessels built. The sailing metaphor carries through without being literal.
+1. **The journey shows, not tells** — every section is a waypoint. The hero is open water at midday, the about section charts the course, projects are the vessels built. The sailing metaphor carries through without being literal.
 
 2. **Precision over polish** — details earn their place. Contrast ratios, spacing rhythm, and semantic HTML come before decorative flourishes. Get the fundamentals right before adding any layer of ornament.
 
@@ -37,6 +37,17 @@ Precise, explorative, grounded. Confident but not loud. Technical without jargon
 
 - WCAG AA as the baseline (contrast ratios, keyboard navigation, semantic structure)
 - `prefers-reduced-motion` respected throughout (no critical animation depends on motion)
-- Light and dark themes, stored in sessionStorage
+- Light theme by default — the day sail is the identity. A dusk variant is
+  deferred until the 3D scene (cciv) lands, so it can match the scene's own
+  lighting rather than bolting on a second palette.
 - Skip-to-content link for keyboard users
 - No content gated behind JavaScript
+
+## Roadmap
+
+- **3D scene (cciv)** — the hero's static sky + horizon is the reserved slot.
+  When cciv's scene is ready, it replaces the hero visual as a full-bleed
+  frame; the day palette already matches the scene's daylight. The seam
+  decision (page vs. hero swap) is deliberately deferred until the scene is
+  close to stable.
+- **Dusk theme** — only if the 3D scene lands with its own lighting language.

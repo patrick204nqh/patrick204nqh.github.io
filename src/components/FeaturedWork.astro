@@ -1,0 +1,51 @@
+---
+import { Card, CardContent } from './ui/card';
+
+const featured = [
+  {
+    name: 'dbwatcher',
+    description: 'Track and visualize database changes in Rails applications.',
+    language: 'Ruby',
+    url: 'https://github.com/patrick204nqh/dbwatcher',
+  },
+  {
+    name: 'triagekit',
+    description: 'Repo triage in one self-contained HTML file: Dependabot alerts, code scanning, PRs and issues — scored and tiered. No server, no CDN.',
+    language: 'TypeScript',
+    url: 'https://github.com/patrick204nqh/triagekit',
+  },
+  {
+    name: 'trace_viz',
+    description: 'Trace and visualize the events executed inside a block of code — for debugging and logging.',
+    language: 'Ruby',
+    url: 'https://github.com/patrick204nqh/trace_viz',
+  },
+];
+---
+
+<section class="page-section relative z-10 py-24 bg-surface" id="work">
+  <div class="max-w-[42rem] mx-auto px-6">
+    <h2 class="font-display text-[clamp(1.5rem,3vw,2.25rem)] font-semibold tracking-[-0.75px] leading-[1.2] mb-6 max-w-[28ch] reveal">Selected work</h2>
+    <div class="text-ink-dim leading-relaxed max-w-[60ch] text-sm reveal reveal-delay-1">
+      <p>Public work on GitHub from a developer who ships.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8">
+      {featured.map((repo, i) => (
+        <a href={repo.url} target="_blank" rel="noopener noreferrer" class="no-underline reveal {i > 0 ? `reveal-delay-${Math.min(i, 1)}` : ''}">
+          <Card class="h-full transition-all duration-300 hover:border-accent hover:bg-accent/5">
+            <CardContent class="p-4 flex flex-col h-full">
+              <span class="font-mono text-xs font-medium text-ink truncate block">{repo.name}</span>
+              <span class="text-xs text-ink-dim leading-relaxed line-clamp-3 block mt-1 flex-1">{repo.description}</span>
+              <span class="flex gap-3 text-[0.7rem] text-ink-muted font-mono mt-2 items-center">
+                <span class="rounded px-1.5 py-0 h-4 text-[0.65rem] bg-surface-alt border border-border">{repo.language}</span>
+              </span>
+            </CardContent>
+          </Card>
+        </a>
+      ))}
+    </div>
+    <div class="mt-8 reveal reveal-delay-2">
+      <a href="/projects" class="font-mono text-xs text-accent no-underline hover:opacity-70 transition-opacity">View all projects &rarr;</a>
+    </div>
+  </div>
+</section>

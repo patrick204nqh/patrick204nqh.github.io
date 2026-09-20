@@ -23,7 +23,7 @@ function RepoCard({ repo }: { repo: Repo }) {
         <p className="text-sm text-ink-dim leading-relaxed mb-2">{repo.description || 'No description'}</p>
         <div className="flex gap-4 text-xs text-ink-muted font-mono">
           {repo.language && <Badge variant="secondary" className="text-[0.65rem] px-1.5 py-0 h-4">{repo.language}</Badge>}
-          {repo.stargazers_count > 0 && <span className="text-[#d29922]">&#9733; {repo.stargazers_count}</span>}
+          {repo.stargazers_count > 0 && <span className="text-accent">&#9733; {repo.stargazers_count}</span>}
           <span>Updated {new Date(repo.updated_at).toLocaleDateString('en', { month: 'short', year: 'numeric' })}</span>
         </div>
       </CardContent>
@@ -34,6 +34,7 @@ function RepoCard({ repo }: { repo: Repo }) {
 export default function ProjectsPage() {
   const [oss, setOss] = useState<Repo[]>([]);
   const [personal, setPersonal] = useState<Repo[]>([]);
+  const [stats, setStats] = useState({ count: '-', stars: '-' });
   const [error, setError] = useState(false);
 
   useEffect(() => {
@@ -42,6 +43,10 @@ export default function ProjectsPage() {
       .then((repos: Repo[]) => {
         if (!Array.isArray(repos)) throw new Error('Invalid response');
         const nonFork = repos.filter(r => !r.fork);
+        setStats({
+          count: String(nonFork.length),
+          stars: String(nonFork.reduce((s, r) => s + r.stargazers_count, 0)),
+        });
         const ossRepos = nonFork.filter(r => (r.topics || []).some(t => ['oss', 'hacktoberfest', 'opensource'].includes(t)));
         const personalRepos = nonFork.filter(r => !(r.topics || []).some(t => ['oss', 'hacktoberfest', 'archived'].includes(t)));
         setOss(ossRepos.sort((a, b) => b.stargazers_count - a.stargazers_count));
@@ -52,6 +57,17 @@ export default function ProjectsPage() {
 
   return (
     <div className="max-w-[42rem] mx-auto px-6 py-24">
+      <div className="flex gap-10 mb-12">
+        <div className="flex flex-col gap-0.5">
+          <span className="font-mono text-[1.75rem] font-medium text-accent leading-tight">{stats.count}</span>
+          <span className="text-xs text-ink-muted font-mono uppercase tracking-wide">repositories</span>
+        </div>
+        <div className="flex flex-col gap-0.5">
+          <span className="font-mono text-[1.75rem] font-medium text-accent leading-tight">{stats.stars}</span>
+          <span className="text-xs text-ink-muted font-mono uppercase tracking-wide">stars earned</span>
+        </div>
+      </div>
+
       <section className="mb-16">
         <h2 className="font-display text-[clamp(1.5rem,3vw,2.25rem)] font-semibold tracking-[-0.75px] leading-[1.2] mb-8">Open Source</h2>
         <div className="flex flex-col gap-3">

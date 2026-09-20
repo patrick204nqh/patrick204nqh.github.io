@@ -8,18 +8,35 @@ export interface Props {
 }
 
 const { title } = Astro.props;
+
+const site = 'https://patrick204nqh.com';
+const pageTitle = title ? `${title} — PATRICK204NQH` : 'PATRICK204NQH';
+const description = "Patrick — software engineer in Sai Gon. Ruby tooling for AI agents and the people who maintain software. Durable, boring infrastructure over clever tricks.";
 ---
 
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={site + Astro.url.pathname} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <title>{title ? `${title} — PATRICK204NQH` : 'PATRICK204NQH'}</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PATRICK204NQH" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={site + Astro.url.pathname} />
+    <meta property="og:image" content={`${site}/og.png`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${site}/og.png`} />
+    <title>{pageTitle}</title>
   </head>
   <body class="bg-surface text-ink min-h-screen">
     <a href="#main-content" class="skip-link">Skip to main content</a>
